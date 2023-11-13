@@ -73,7 +73,7 @@ function MenuForm () {
                 </div>
                 <div className="field-group">
                     <div className="field">
-                        <label className="label">Vegetables Amount</label>
+                        <label className="label">Amount of Vegetables</label>
                         <input 
                             className="inout is-expanded"
                             value={amount || ''}
