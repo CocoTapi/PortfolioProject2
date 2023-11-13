@@ -3,7 +3,6 @@ import { useState } from 'react';
 function MenuForm () {
     const [newTitle, setNewTitle] = useState('');
     const [amount, setAmount] = useState('');
-    const [newRecipe, setNewRecipe] = useState('');
 
     const handleNameChange = (event) => {
         setNewTitle(event.target.value);
@@ -14,16 +13,11 @@ function MenuForm () {
         setAmount(vegiesAmount);
     }
 
-    const handleRecipeChange = (event) => {
-        setNewRecipe(event.target.value);
-    }
-
     const handleSubmit = (event) => {
         event.preventDefault();
         //addMenu
         setNewTitle('');
         setAmount('');
-        setNewRecipe('');
     }
 
     return (
@@ -86,16 +80,6 @@ function MenuForm () {
 
                 {/* fruis Amount  */}
 
-                <div className="field-group">
-                    <div className="field">
-                        <label className="label">Recipe URL or Notes</label>
-                        <input 
-                            className="inout is-expanded"
-                            value={newRecipe}
-                            onChange={handleRecipeChange} 
-                        />
-                    </div>
-                </div>
                 <div className="field">
                     <button className="button is-link">Submit</button>
                 </div>

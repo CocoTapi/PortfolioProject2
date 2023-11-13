@@ -1,6 +1,8 @@
 function MenuList () {
     return (
-        <div>Menu List</div>
+        <div className="menu-list">
+            <div>Vinegar Chicken</div>
+        </div>
     )
 }
 
