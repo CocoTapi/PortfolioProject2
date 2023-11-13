@@ -7,8 +7,9 @@
     margin-bottom: 0px;
   }
   .menu-form form {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
+    margin-bottom: 10px;
   }
   .menu-form .field {
     display: flex;
@@ -17,8 +18,8 @@
     margin-right: 10px;
   }
   .menu-form .field label.label {
-    margin-bottom: 0px;
-    width: 70px;
+    margin-bottom: 10px;
+    width: 130px;
   }
   .menu-form input {
     width: 100%;
@@ -28,7 +29,7 @@
   }
   
   .menu-list .panel.bold {
-    font-weight: 600;
+    font-weight: 500;
   }
   
   .menu-list .panel {

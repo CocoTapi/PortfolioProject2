@@ -27,19 +27,48 @@ function MenuForm () {
                         />
                     </div>
                 </div>
-                {/* <div className="field-group">
+                <div className="field-group">
                     <div className="field">
-                        <label className="label">Whole Grains</label>
+                        <label className="label">Whole Grain</label>
                         <input 
                             className="inout is-expanded"
-                            value={cost || ''}
-                            onChange={handleCostChange} 
-                            type="number"
+                            value={newValue}
+                            onChange={handleNameChange} 
                         />
                     </div>
-                </div> */}
+                </div>
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label">Protein</label>
+                        <input 
+                            className="inout is-expanded"
+                            value={newValue}
+                            onChange={handleNameChange} 
+                        />
+                    </div>
+                </div>
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label">Vegetables</label>
+                        <input 
+                            className="inout is-expanded"
+                            value={newValue}
+                            onChange={handleNameChange} 
+                        />
+                    </div>
+                </div>
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label">Fruits</label>
+                        <input 
+                            className="inout is-expanded"
+                            value={newValue}
+                            onChange={handleNameChange} 
+                        />
+                    </div>
+                </div>
                 <div className="field">
-                <button className="button is-link">Submit</button>
+                    <button className="button is-link">Submit</button>
                 </div>
             </form>
         </div>
