@@ -1,23 +1,35 @@
 import { useState } from 'react';
 
 function MenuForm () {
-    const [newTitle, setNewTitle] = useState('');
-    const [amount, setAmount] = useState('');
+    const [formData, setFormData] = useState(
+        {
+            title: "", 
+            eatWith: "", 
+            protein: "",
+            prepTime: "",
+            cookTime: "",
+            servings: "",
+            ingredients: "",
+            instructions: ""
+        }
+    );
+    
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevFormData) => ({...prevFormData, [name]: value}))
+    };
 
-    const handleNameChange = (event) => {
-        setNewTitle(event.target.value);
-    }
-
-    const handleAmountChange = (event) => {
-        const vegiesAmount = parseInt(event.target.value);
-        setAmount(vegiesAmount);
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        //addMenu
-        setNewTitle('');
-        setAmount('');
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(`
+            title: ${formData.title}, 
+            eatWith: ${formData.eatWith}, 
+            protein: ${formData.protein}, 
+            prepTime: ${formData.prepTime},
+            cookTime: ${formData.cookTime},
+            servings: ${formData.servings},
+            ingredients: ${formData.ingredients},
+            instructions: ${formData.instructions}`)
     }
 
     return (
@@ -26,24 +38,29 @@ function MenuForm () {
             <form onSubmit={handleSubmit}>
                 <div className="field-group">
                     <div className="field">
-                        <label className="label">Title</label>
+                        <label className="label" htmlFor='title'>Title</label>
                         <input 
                             className="inout is-expanded"
-                            value={newTitle}
-                            onChange={handleNameChange} 
+                            type='text'
+                            id='title'
+                            name='title'
+                            value={formData.title}
+                            onChange={handleChange} 
                         />
                     </div>
                 </div>
                 <div className="field-group">
                     <div className="field">
-                        <label className="label">Eat with</label>
-                        <div class="control">
-                            <div class="select">
-                                <select>
-                                <option>Rice</option>
-                                <option>Bread</option>
-                                <option>Pasta</option>
-                                <option>All of them</option>
+                        <label className="label" htmlFor='eatWith'>Eat with</label>
+                        <div className="control">
+                            <div className="select">
+                                <select id='eatWith' name='eatWith' value={formData.eatWith} onChange={handleChange}>
+                                <option>Select One</option>
+                                <option value="rice">Rice</option>
+                                <option value="bread">Bread</option>
+                                <option value="pasta">Pasta</option>
+                                <option value="all of them">All of them</option>
+                                <option value="other">Other</option>
                                 </select>
                             </div>
                         </div> 
@@ -51,15 +68,17 @@ function MenuForm () {
                 </div>
                 <div className="field-group">
                     <div className="field">
-                        <label className="label">Protein</label>
-                        <div class="control">
-                            <div class="select">
-                                <select>
-                                <option>Chicken</option>
-                                <option>Pork</option>
-                                <option>Beaf</option>
-                                <option>Beans</option>
-                                <option>Other</option>
+                        <label className="label" htmlFor='protein'>Protein</label>
+                        <div className="control">
+                            <div className="select">
+                                <select id='protein' name="protein" value={formData.protein} onChange={handleChange}>
+                                <option>Select One</option>
+                                <option value="chicken">Chicken</option>
+                                <option value="pork">Pork</option>
+                                <option value="beef">Beaf</option>
+                                <option value="seafood">seafood</option>
+                                <option value="beans">Beans</option>
+                                <option value="other">Other</option>
                                 </select>
                             </div>
                         </div> 
@@ -67,19 +86,71 @@ function MenuForm () {
                 </div>
                 <div className="field-group">
                     <div className="field">
-                        <label className="label">Amount of Vegetables</label>
+                        <label className="label" htmlFor='prepTime'>Prep Time</label>
                         <input 
                             className="inout is-expanded"
-                            value={amount || ''}
-                            onChange={handleAmountChange} 
+                            id='prepTime'
+                            name='prepTime'
+                            value={formData.prepTime || ''}
+                            onChange={handleChange} 
                             type="number"
                         />
-                        <div>% of your entire meal</div>
+                        <div>mins</div>
                     </div>
                 </div>
-
-                {/* fruis Amount  */}
-
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label" htmlFor='cookTime'>Cook Time</label>
+                        <input 
+                            className="inout is-expanded"
+                            id='cookTime'
+                            name='cookTime'
+                            value={formData.cookTime || ''}
+                            onChange={handleChange} 
+                            type="number"
+                        />
+                        <div>mins</div>
+                    </div>
+                </div>
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label" htmlFor='servings'>Servings</label>
+                        <input 
+                            className="inout is-expanded"
+                            id='servings'
+                            name='servings'
+                            value={formData.servings || ''}
+                            onChange={handleChange} 
+                            type="number"
+                        />
+                    </div>
+                </div>
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label" htmlFor='ingredients'>Ingredients</label>
+                        <input 
+                            className="inout is-expanded textarea"
+                            type='text'
+                            id='ingredients'
+                            name='ingredients'
+                            value={formData.ingredients}
+                            onChange={handleChange} 
+                        />
+                    </div>
+                </div>
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label" htmlFor='instructions'>Instructions</label>
+                        <input 
+                            className="textarea"
+                            type='text'
+                            id='instructions'
+                            name='instructions'
+                            value={formData.Ingredisnts}
+                            onChange={handleChange} 
+                        />
+                    </div>
+                </div>
                 <div className="field">
                     <button className="button is-link">Submit</button>
                 </div>
