@@ -1,3 +1,4 @@
+import { useAddRecipeMutation } from '../store';
 import { useState } from 'react';
 
 function RecipeForm () {
@@ -14,6 +15,7 @@ function RecipeForm () {
             instructions: [""]
         }
     );
+    const [addRecipe] = useAddRecipeMutation();
     
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -46,6 +48,7 @@ function RecipeForm () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        addRecipe({ userName: formData.userName });
         console.log(`
             user name: ${formData.userName},
             title: ${formData.title}, 

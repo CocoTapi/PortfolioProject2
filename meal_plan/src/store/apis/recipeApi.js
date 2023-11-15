@@ -37,12 +37,14 @@ const recipeApi = createApi({
 				invalidatesTags: (result, error, recipe) => {
 					return [{ type: 'Recipe' }];
 				},
-				query: ({name}) => {
+				query: ({
+					userName
+				}) => {
 					return {
 						url: 'recipe',
 						method: 'POST',
 						body: {
-							name,
+							userName
 						},
 					};
 				},
