@@ -3,6 +3,7 @@ import { useState } from 'react';
 function RecipeForm () {
     const [formData, setFormData] = useState(
         {
+            userName: "",
             title: "", 
             eatWith: "", 
             protein: "",
@@ -46,6 +47,7 @@ function RecipeForm () {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(`
+            user name: ${formData.userName},
             title: ${formData.title}, 
             eatWith: ${formData.eatWith}, 
             protein: ${formData.protein}, 
@@ -62,7 +64,20 @@ function RecipeForm () {
             <form onSubmit={handleSubmit}>
                 <div className="field-group">
                     <div className="field">
-                        <label className="label" htmlFor='title'>Title</label>
+                        <label className="label" htmlFor='userName'>User Name</label>
+                        <input 
+                            className="inout is-expanded"
+                            type='text'
+                            id='userName'
+                            name='userName'
+                            value={formData.userName}
+                            onChange={handleChange} 
+                        />
+                    </div>
+                </div>
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label" htmlFor='title'>Recipe Title</label>
                         <input 
                             className="inout is-expanded"
                             type='text'
