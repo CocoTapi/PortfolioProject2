@@ -1,12 +1,24 @@
-//import { useState } from "react";
+import { useFetchRecipeQuery } from "../store";
+import RecipeListItem from "./RecipeListItem";
 
 function RecipeList () {
+    const { data, error, isFetching } = useFetchRecipeQuery();
+
+    let content;
+    if (isFetching) {
+        content = <div>Loading</div>
+      } else if (error) {
+        console.log(error)
+        content = <div>Error loading recipes</div>
+      } else {
+        content = data.map(recipe => {
+          return <RecipeListItem key={recipe.id} recipe={recipe} />
+        });
+      }
 
     return (
-        <div className="menu-list">
-            <div>
-                List of recipes
-            </div>
+        <div>
+            {content}
         </div>
     )
 }
