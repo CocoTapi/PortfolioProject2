@@ -9,8 +9,8 @@ function MenuForm () {
             prepTime: "",
             cookTime: "",
             servings: "",
-            ingredients: "",
-            instructions: ""
+            ingredients: [""],
+            instructions: [""]
         }
     );
     
@@ -18,6 +18,28 @@ function MenuForm () {
         const { name, value } = event.target;
         setFormData((prevFormData) => ({...prevFormData, [name]: value}))
     };
+    
+    const handleIngredientChange = (event, index) => {
+        const newIngredients = [...formData.ingredients];
+        newIngredients[index] = event.target.value;
+        setFormData((prevFormData) => ({ ...prevFormData, ingredients: newIngredients }));
+    }
+
+    const handleAddIngredient = (event) => {
+        event.preventDefault();
+        setFormData((prevFormData) => ({ ...prevFormData, ingredients: [...prevFormData.ingredients, ""]}));
+    }
+
+    const handleInstructionChange = (event, index) => {
+        const newInstructions = [...formData.instructions];
+        newInstructions[index] = event.target.value;
+        setFormData((prevFormData) => ({ ...prevFormData, instructions: newInstructions }));
+    }
+
+    const handleAddInstruction = (event) => {
+        event.preventDefault();
+        setFormData((prevFormData) => ({ ...prevFormData, instructions: [...prevFormData.instructions, ""]}));
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -125,32 +147,46 @@ function MenuForm () {
                         />
                     </div>
                 </div>
-                <div className="field-group">
-                    <div className="field">
-                        <label className="label" htmlFor='ingredients'>Ingredients</label>
-                        <input 
-                            className="inout is-expanded textarea"
-                            type='text'
-                            id='ingredients'
-                            name='ingredients'
-                            value={formData.ingredients}
-                            onChange={handleChange} 
-                        />
+                <div className='label'>Ingredients</div>
+                {formData.ingredients.map((ingredient, index) => (
+                    <div className="field-group" key={index} >
+                        <div className="field">
+                            <label className="label" htmlFor={`ingredient-${index}`}>
+                                {index + 1}
+                            </label>
+                            <input 
+                                className="inout is-expanded"
+                                type='text'
+                                id={`ingredient-${index}`}
+                                name={`ingredient-${index}`}
+                                value={ingredient}
+                                onChange={(event) => handleIngredientChange(event, index)} 
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="field-group">
-                    <div className="field">
-                        <label className="label" htmlFor='instructions'>Instructions</label>
-                        <input 
-                            className="textarea"
-                            type='text'
-                            id='instructions'
-                            name='instructions'
-                            value={formData.Ingredisnts}
-                            onChange={handleChange} 
-                        />
+                ))
+                }
+                <button onClick={handleAddIngredient}>Add Ingredient</button>
+                <div className='label'>Instructions</div>
+                {formData.instructions.map((instruction, index) => (
+                    <div className="field-group" key={index} >
+                        <div className="field">
+                            <label className="label" htmlFor={`instruction-${index}`}>
+                                {index + 1}
+                            </label>
+                            <input 
+                                className="inout is-expanded"
+                                type='text'
+                                id={`instruction-${index}`}
+                                name={`instruction-${index}`}
+                                value={instruction}
+                                onChange={(event) => handleInstructionChange(event, index)} 
+                            />
+                        </div>
                     </div>
-                </div>
+                ))
+                }
+                <button onClick={handleAddInstruction}>Add Instruction</button>
                 <div className="field">
                     <button className="button is-link">Submit</button>
                 </div>
