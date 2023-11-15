@@ -76,9 +76,17 @@ const recipeApi = createApi({
 					};
 				},
 			}),
+			searchARecipe: builder.query({
+				query: (query) => {
+					return {
+						url: `search?q=${query}`,
+						method: 'GET',
+					};
+				},
+			})
 		};
 	},
 });
 
-export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation } = recipeApi;
+export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation, useSearchARecipeQuery } = recipeApi;
 export { recipeApi };

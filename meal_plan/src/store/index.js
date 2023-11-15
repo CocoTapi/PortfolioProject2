@@ -18,5 +18,6 @@ setupListeners(store.dispatch);
 export {
     useFetchRecipeQuery,
     useAddRecipeMutation,
-    useRemoveRecipeMutation
+    useRemoveRecipeMutation,
+    useSearchARecipeQuery
 } from './apis/recipeApi';
