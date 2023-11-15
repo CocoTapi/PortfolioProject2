@@ -1,3 +1,118 @@
 {
-  "recipes": []
+  "recipes": [
+    {
+      "userName": "Winter",
+      "title": "Pork Dumplings",
+      "eatWith": "other",
+      "protein": "pork",
+      "prepTime": "30",
+      "cookTime": "10",
+      "servings": "50",
+      "ingredients": [
+        "1lb of ground pork",
+        "1/4 cut of cabbage",
+        "a pinch of garlic"
+      ],
+      "instructions": [
+        "cut vegies",
+        "mix pork and vegies",
+        "wrap it "
+      ],
+      "id": 1
+    },
+    {
+      "userName": "Winter",
+      "title": "Pork Dumplings",
+      "eatWith": "other",
+      "protein": "pork",
+      "prepTime": "30",
+      "cookTime": "10",
+      "servings": "50",
+      "ingredients": [
+        {"amount" : "1", "unit": "lb", "ingredient": "ground pork"},
+        "1/4 cut of cabbage",
+        "a pinch of garlic"
+      ],
+      "instructions": [
+        "cut vegies",
+        "mix pork and vegies",
+        "wrap it "
+      ],
+      "id": 2
+    },
+    {
+      "userName": "Winter",
+      "title": "Pork Dumplings",
+      "eatWith": "other",
+      "protein": "pork",
+      "prepTime": "30",
+      "cookTime": "10",
+      "servings": "50",
+      "ingredients": [
+        "1lb of ground pork",
+        "1/4 cut of cabbage",
+        "a pinch of garlic"
+      ],
+      "instructions": [
+        "cut vegies",
+        "mix pork and vegies",
+        "wrap it "
+      ],
+      "id": 3
+    },
+    {
+      "userName": "Winter",
+      "title": "Pork Dumplings",
+      "eatWith": "other",
+      "protein": "pork",
+      "prepTime": "30",
+      "cookTime": "10",
+      "servings": "50",
+      "ingredients": [
+        "1lb of ground pork",
+        "1/4 cut of cabbage",
+        "a pinch of garlic"
+      ],
+      "instructions": [
+        "cut vegies",
+        "mix pork and vegies",
+        "wrap it "
+      ],
+      "id": 4
+    },
+    {
+      "userName": "z",
+      "title": "water",
+      "eatWith": "all of them",
+      "protein": "other",
+      "prepTime": "0",
+      "cookTime": "0",
+      "servings": "1",
+      "ingredients": [
+        "water",
+        ""
+      ],
+      "instructions": [
+        "drink"
+      ],
+      "id": 5
+    },
+    {
+      "userName": "z",
+      "title": "water",
+      "eatWith": "all of them",
+      "protein": "other",
+      "prepTime": "0",
+      "cookTime": "0",
+      "servings": "1",
+      "ingredients": [
+        "water",
+        ""
+      ],
+      "instructions": [
+        "drink"
+      ],
+      "id": 6
+    }
+  ]
 }

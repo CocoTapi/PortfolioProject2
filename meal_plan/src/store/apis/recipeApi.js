@@ -8,7 +8,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 // };
 
 const recipeApi = createApi({
-	reducerPath: 'recipe',
+	reducerPath: 'recipes',
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
 		fetchFn: async (...args) => {
@@ -28,7 +28,7 @@ const recipeApi = createApi({
 				},
 				query: () => {
 					return {
-						url: '/recipe',
+						url: '/recipes',
 						method: 'GET',
 					};
 				},
@@ -38,13 +38,29 @@ const recipeApi = createApi({
 					return [{ type: 'Recipe' }];
 				},
 				query: ({
-					userName
+					userName,
+					title, 
+					eatWith, 
+					protein,
+					prepTime,
+					cookTime,
+					servings,
+					ingredients,
+					instructions
 				}) => {
 					return {
-						url: 'recipe',
+						url: 'recipes',
 						method: 'POST',
 						body: {
-							userName
+							userName,
+							title, 
+							eatWith, 
+							protein,
+							prepTime,
+							cookTime,
+							servings,
+							ingredients,
+							instructions
 						},
 					};
 				},
@@ -55,7 +71,7 @@ const recipeApi = createApi({
 				},
 				query: (recipe) => {
 					return {
-						url: `/recipe/${recipe.id}`,
+						url: `/recipes/${recipe.id}`,
 						method: 'DELETE',
 					};
 				},

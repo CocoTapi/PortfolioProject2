@@ -48,7 +48,17 @@ function RecipeForm () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addRecipe({ userName: formData.userName });
+        addRecipe({ 
+            userName: formData.userName,
+            title: formData.title, 
+            eatWith: formData.eatWith, 
+            protein: formData.protein,
+            prepTime: formData.prepTime,
+            cookTime: formData.cookTime,
+            servings: formData.servings,
+            ingredients: formData.ingredients,
+            instructions: formData.instructions
+         });
         console.log(`
             user name: ${formData.userName},
             title: ${formData.title}, 
