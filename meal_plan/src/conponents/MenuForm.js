@@ -19,6 +19,7 @@ function MenuForm () {
         setFormData((prevFormData) => ({...prevFormData, [name]: value}))
     };
     
+    //for ingredients FIX LATER
     const handleIngredientChange = (event, index) => {
         const newIngredients = [...formData.ingredients];
         newIngredients[index] = event.target.value;
@@ -30,6 +31,7 @@ function MenuForm () {
         setFormData((prevFormData) => ({ ...prevFormData, ingredients: [...prevFormData.ingredients, ""]}));
     }
 
+    //for instructions FIX LATER
     const handleInstructionChange = (event, index) => {
         const newInstructions = [...formData.instructions];
         newInstructions[index] = event.target.value;
