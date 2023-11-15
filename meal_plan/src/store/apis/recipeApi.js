@@ -7,8 +7,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 // 	});
 // };
 
-const menuApi = createApi({
-	reducerPath: 'menu',
+const recipeApi = createApi({
+	reducerPath: 'recipe',
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
 		fetchFn: async (...args) => {
@@ -19,27 +19,27 @@ const menuApi = createApi({
 	}),
 	endpoints(builder) {
 		return {
-			fetchMenu: builder.query({
-				providesTags: (result, error, menu) => {
-					const tags = result.map((menu) => {
-						return { type: 'Menu', id: menu.id };
+			fetchRecipe: builder.query({
+				providesTags: (result, error, recipe) => {
+					const tags = result.map((recipe) => {
+						return { type: 'Recipe', id: recipe.id };
 					});
 					return tags;
 				},
 				query: () => {
 					return {
-						url: '/menu',
+						url: '/recipe',
 						method: 'GET',
 					};
 				},
 			}),
-			addMenu: builder.mutation({
-				invalidatesTags: (result, error, menu) => {
-					return [{ type: 'Menu' }];
+			addRecipe: builder.mutation({
+				invalidatesTags: (result, error, recipe) => {
+					return [{ type: 'Recipe' }];
 				},
 				query: ({name}) => {
 					return {
-						url: 'menu',
+						url: 'recipe',
 						method: 'POST',
 						body: {
 							name,
@@ -47,13 +47,13 @@ const menuApi = createApi({
 					};
 				},
 			}),
-			removeMenu: builder.mutation({
-				invalidatesTags: (result, error, menu) => {
-					return [{ type: 'Menu', id: menu.id }];
+			removeRecipe: builder.mutation({
+				invalidatesTags: (result, error, recipe) => {
+					return [{ type: 'Recipe', id: recipe.id }];
 				},
-				query: (menu) => {
+				query: (recipe) => {
 					return {
-						url: `/menu/${menu.id}`,
+						url: `/recipe/${recipe.id}`,
 						method: 'DELETE',
 					};
 				},
@@ -62,6 +62,5 @@ const menuApi = createApi({
 	},
 });
 
-export const { useFetchMenuQuery, useAddMenuMutation, useRemoveMenuMutation } =
-	menuApi;
-export { menuApi };
+export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation } = recipeApi;
+export { recipeApi };

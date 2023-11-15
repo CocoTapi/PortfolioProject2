@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function MenuForm () {
+function RecipeForm () {
     const [formData, setFormData] = useState(
         {
             title: "", 
@@ -58,7 +58,7 @@ function MenuForm () {
 
     return (
         <div className="menu-form panel">
-            <h4 className="subtitle is-3">Add Menu</h4>
+            <h4 className="subtitle is-3">Add Recipe</h4>
             <form onSubmit={handleSubmit}>
                 <div className="field-group">
                     <div className="field">
@@ -197,4 +197,4 @@ function MenuForm () {
     )
 }
 
-export default MenuForm;
+export default RecipeForm;

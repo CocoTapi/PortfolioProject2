@@ -1,22 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { menuApi } from './apis/menuApi';
+import { recipeApi } from './apis/recipeApi';
 
 
 export const store = configureStore({
     reducer: {
-        [menuApi.reducerPath]: menuApi.reducer,
+        [recipeApi.reducerPath]: recipeApi.reducer,
     },
     middleware: (getDefaultMiddleware) => {
         return getDefaultMiddleware()
-            .concat(menuApi.middleware)
+            .concat(recipeApi.middleware)
     }
 });
 
 setupListeners(store.dispatch);
 
 export {
-    useFetchMenuQuery,
-    useAddMenuMutation,
-    useRemoveMenuMutation
-} from './apis/menuApi';
+    useFetchRecipeQuery,
+    useAddRecipeMutation,
+    useRemoveRecipeMutation
+} from './apis/recipeApi';
