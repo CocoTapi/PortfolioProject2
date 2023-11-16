@@ -22,6 +22,14 @@ function RecipeList ({ searchTerm }) {
 
     return (
         <div>
+            <p>
+                {/* ADD FUNCTION LATER */}
+                <button class="button is-success is-inverted">Chicken</button>
+                <button class="button is-success is-inverted">Pork</button>
+                <button class="button is-success is-inverted">Beef</button>
+                <button class="button is-success is-inverted">Seafood</button>
+                <button class="button is-success is-inverted">Other</button>
+            </p>
             {content}
         </div>
     )

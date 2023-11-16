@@ -22,16 +22,13 @@ function Home () {
                 <p class="panel-heading has-background-primary-dark has-text-white">
                     Healthy Diet Meal Planning
                 </p>
-                <RecipeSearch 
-                    onChange={handleSearchTermChange} 
-                    value={searchTerm}/>
                 <p>
-                    <button class="button is-success is-inverted">Chicken</button>
-                    <button class="button is-success is-inverted">Pork</button>
-                    <button class="button is-success is-inverted">Beef</button>
-                    <button class="button is-success is-inverted">Seafood</button>
-                    <button class="button is-success is-inverted">Other</button>
-                    <button class="button is-danger is-rounded" onClick={handleClick}>Add Recipe</button> 
+                    <RecipeSearch 
+                        onChange={handleSearchTermChange} 
+                        value={searchTerm}/>
+                    <button class="button is-danger is-rounded" onClick={handleClick}>
+                        Add Recipe
+                    </button>
                 </p>
             </nav>
             {isFormVisible && <RecipeForm />}
