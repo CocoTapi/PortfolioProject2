@@ -13,11 +13,9 @@ function RecipeList ({ searchTerm }) {
         content = <div>Error loading recipes</div>
       } else {
         content = data
-            // .filter(item => {
-            //     return searchTerm.toLowerCase() === ''
-            //         ? item
-            //         : item.title.toLowerCase().includes(searchTerm);
-            // })
+            .filter((recipe) => {
+               return recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
+            })
             .map(recipe => {
             return <RecipeListItem key={recipe.id} recipe={recipe} />
             });
