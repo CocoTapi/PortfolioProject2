@@ -3,7 +3,6 @@ import RecipeListItem from "./RecipeListItem";
 
 function RecipeList ({ searchTerm }) {
     const { data, error, isFetching } = useFetchRecipeQuery();
-    console.log(searchTerm);
 
     let content;
     if (isFetching) {
