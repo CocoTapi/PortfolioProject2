@@ -15,6 +15,7 @@ function RecipeForm ({ setFormVisible }) {
             instructions: [""]
         }
     );
+
     const [addRecipe] = useAddRecipeMutation();
     
     const handleChange = (event) => {

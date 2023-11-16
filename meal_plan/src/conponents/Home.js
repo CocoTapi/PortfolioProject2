@@ -1,7 +1,8 @@
-import RecipeForm from "./RecipeForm";
+//import RecipeForm from "./RecipeForm";
 import RecipeList from "./RecipeList";
 import RecipeSearch from "./RecipeSearch";
 import { useState } from "react";
+import TestForm from "./TestForm";
 
 function Home () {
     const [isFormVisible, setFormVisible] = useState(false);
@@ -31,7 +32,9 @@ function Home () {
                     </button>
                 </p>
             </nav>
-            {isFormVisible && <RecipeForm setFormVisible={setFormVisible}/>}
+            {/* {isFormVisible && <RecipeForm setFormVisible={setFormVisible}/>} */}
+            {isFormVisible && <TestForm setFormVisible={setFormVisible}/>}
+
             <RecipeList searchTerm={searchTerm} />
         </div>
     )
