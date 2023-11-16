@@ -100,6 +100,27 @@
         "cook beef with vegetable oil"
       ],
       "id": 9
+    },
+    {
+      "userName": "Summer",
+      "title": "Pizza Dough",
+      "eatWith": "other",
+      "protein": "other",
+      "prepTime": "60",
+      "cookTime": "0",
+      "servings": "3",
+      "ingredients": [
+        "bread flour",
+        "lukewarm water",
+        "sugar",
+        "olive oil",
+        "yeast"
+      ],
+      "instructions": [
+        "mix yeast, sugar and lukewarm water.",
+        "add everything in a bowl and knead it for 10 min"
+      ],
+      "id": 10
     }
   ]
 }

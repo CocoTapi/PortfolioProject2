@@ -59,16 +59,19 @@ function RecipeForm () {
             ingredients: formData.ingredients,
             instructions: formData.instructions
          });
-        console.log(`
-            user name: ${formData.userName},
-            title: ${formData.title}, 
-            eatWith: ${formData.eatWith}, 
-            protein: ${formData.protein}, 
-            prepTime: ${formData.prepTime},
-            cookTime: ${formData.cookTime},
-            servings: ${formData.servings},
-            ingredients: ${formData.ingredients},
-            instructions: ${formData.instructions}`)
+        setFormData(
+            {
+                userName: "",
+                title: "", 
+                eatWith: "", 
+                protein: "",
+                prepTime: "",
+                cookTime: "",
+                servings: "",
+                ingredients: [""],
+                instructions: [""]
+            }
+        );
     }
 
     return (
