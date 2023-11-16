@@ -121,6 +121,38 @@
         "add everything in a bowl and knead it for 10 min"
       ],
       "id": 10
+    },
+    {
+      "userName": "Spring",
+      "title": "Curry",
+      "eatWith": "",
+      "protein": "",
+      "prepTime": "",
+      "cookTime": "",
+      "servings": "",
+      "ingredients": [
+        ""
+      ],
+      "instructions": [
+        ""
+      ],
+      "id": 11
+    },
+    {
+      "userName": "Spring",
+      "title": "chicken soup",
+      "eatWith": "",
+      "protein": "",
+      "prepTime": "",
+      "cookTime": "",
+      "servings": "",
+      "ingredients": [
+        ""
+      ],
+      "instructions": [
+        ""
+      ],
+      "id": 12
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { useAddRecipeMutation } from '../store';
 import { useState } from 'react';
 
-function RecipeForm () {
+function RecipeForm ({ setFormVisible }) {
     const [formData, setFormData] = useState(
         {
             userName: "",
@@ -72,6 +72,7 @@ function RecipeForm () {
                 instructions: [""]
             }
         );
+        setFormVisible(false);
     }
 
     return (

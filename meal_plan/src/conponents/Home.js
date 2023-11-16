@@ -31,7 +31,7 @@ function Home () {
                     </button>
                 </p>
             </nav>
-            {isFormVisible && <RecipeForm />}
+            {isFormVisible && <RecipeForm setFormVisible={setFormVisible}/>}
             <RecipeList searchTerm={searchTerm} />
         </div>
     )
