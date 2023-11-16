@@ -88,5 +88,5 @@ const recipeApi = createApi({
 	},
 });
 
-export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation, useSearchARecipeQuery } = recipeApi;
+export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation } = recipeApi;
 export { recipeApi };

@@ -21,66 +21,6 @@
       "id": 1
     },
     {
-      "userName": "Winter",
-      "title": "Pork Dumplings",
-      "eatWith": "other",
-      "protein": "pork",
-      "prepTime": "30",
-      "cookTime": "10",
-      "servings": "50",
-      "ingredients": [
-        {"amount" : "1", "unit": "lb", "ingredient": "ground pork"},
-        "1/4 cut of cabbage",
-        "a pinch of garlic"
-      ],
-      "instructions": [
-        "cut vegies",
-        "mix pork and vegies",
-        "wrap it "
-      ],
-      "id": 2
-    },
-    {
-      "userName": "Winter",
-      "title": "Pork Dumplings",
-      "eatWith": "other",
-      "protein": "pork",
-      "prepTime": "30",
-      "cookTime": "10",
-      "servings": "50",
-      "ingredients": [
-        "1lb of ground pork",
-        "1/4 cut of cabbage",
-        "a pinch of garlic"
-      ],
-      "instructions": [
-        "cut vegies",
-        "mix pork and vegies",
-        "wrap it "
-      ],
-      "id": 3
-    },
-    {
-      "userName": "Winter",
-      "title": "Pork Dumplings",
-      "eatWith": "other",
-      "protein": "pork",
-      "prepTime": "30",
-      "cookTime": "10",
-      "servings": "50",
-      "ingredients": [
-        "1lb of ground pork",
-        "1/4 cut of cabbage",
-        "a pinch of garlic"
-      ],
-      "instructions": [
-        "cut vegies",
-        "mix pork and vegies",
-        "wrap it "
-      ],
-      "id": 4
-    },
-    {
       "userName": "z",
       "title": "water",
       "eatWith": "all of them",
@@ -98,21 +38,68 @@
       "id": 5
     },
     {
-      "userName": "z",
-      "title": "water",
-      "eatWith": "all of them",
-      "protein": "other",
-      "prepTime": "0",
-      "cookTime": "0",
-      "servings": "1",
+      "userName": "Winter",
+      "title": "Vinegar Chicken ",
+      "eatWith": "rice",
+      "protein": "chicken",
+      "prepTime": "10",
+      "cookTime": "15",
+      "servings": "3",
       "ingredients": [
-        "water",
+        "1 chicken breast",
+        "1 potato",
+        "1 carrot",
+        "1 bell pepper",
+        "50ml of soy sauce",
         ""
       ],
       "instructions": [
-        "drink"
+        "cut chicken and marinate it with mirin. ",
+        "cut all vegetables "
       ],
-      "id": 6
+      "id": 7
+    },
+    {
+      "userName": "Winter",
+      "title": "Shrimp roll",
+      "eatWith": "all of them",
+      "protein": "seafood",
+      "prepTime": "20",
+      "cookTime": "1",
+      "servings": "6",
+      "ingredients": [
+        "6 rice pepers",
+        "18 shrimps",
+        "10g of rice noodle",
+        "1 sliced carrot",
+        "1 lettuce"
+      ],
+      "instructions": [
+        "marinate shrimp with sake, ginger, and salt",
+        "cut lettuce"
+      ],
+      "id": 8
+    },
+    {
+      "userName": "Spring",
+      "title": "Beef and broccolis ",
+      "eatWith": "rice",
+      "protein": "beef",
+      "prepTime": "15",
+      "cookTime": "15",
+      "servings": "4",
+      "ingredients": [
+        "1 lb of beef",
+        "broccolis",
+        "soy sauce",
+        "brown sugar"
+      ],
+      "instructions": [
+        "cut beef and broccoli",
+        "mix all seasonings ",
+        "cook beef with vegetable oil"
+      ],
+      "id": 9
     }
   ]
 }

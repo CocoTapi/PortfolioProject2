@@ -1,13 +1,4 @@
-import { useState } from 'react';
-import { useSearchARecipeQuery } from '../store';
-
-function RecipeSearch () {
-    const [searchTerm, setSearchTerm] = useState('');
-    const { data, error, isLoading } = useSearchARecipeQuery();
-
-    const handleSearchTermChange = (event) => {
-        setSearchTerm(event.target.value);
-    }
+function RecipeSearch ({ value, onChange }) {
     return (
         <div class="panel-block">
             <p class="control has-icons-left">
@@ -15,8 +6,8 @@ function RecipeSearch () {
                     class="input" 
                     type="text" 
                     placeholder="Search"
-                    value={searchTerm}
-                    onChange={handleSearchTermChange}
+                    value={value}
+                    onChange={onChange}
                 />
                 <span class="icon is-left">
                     <i class="fas fa-search" aria-hidden="true"></i>
