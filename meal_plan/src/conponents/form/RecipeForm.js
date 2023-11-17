@@ -1,6 +1,7 @@
 import { useAddRecipeMutation } from '../../store';
 import { useState } from 'react';
 import IngredientForm from './IngredientForm';
+import { RiDeleteBinFill } from "react-icons/ri";
 
 function RecipeForm ({ setFormVisible }) {
     const initial = {
@@ -31,17 +32,27 @@ function RecipeForm ({ setFormVisible }) {
         event.preventDefault();
         setFormData((prevFormData) => ({ ...prevFormData, ingredients: [...prevFormData.ingredients, { amount: "", unit: "", item: "" }] }));
     };
+    const handleDeleteIngredients = (event, index) => {
+        const values = [...formData.ingredients];
+        values.splice(index, 1);
+        setFormData((prevFormData) => ({ ...prevFormData, ingredients: values }));
+    }
 
     //for instructions
     const handleInstructionChange = (event, index) => {
         const newInstructions = [...formData.instructions];
         newInstructions[index] = event.target.value;
         setFormData((prevFormData) => ({ ...prevFormData, instructions: newInstructions }));
-    }
+    };
     const handleAddInstruction = (event) => {
         event.preventDefault();
         setFormData((prevFormData) => ({ ...prevFormData, instructions: [...prevFormData.instructions, ""]}));
-    }
+    };
+    const handleDeleteInstructions = (event, index) => {
+        const values = [...formData.instructions];
+        values.splice(index, 1);
+        setFormData((prevFormData) => ({ ...prevFormData, instructions: values }));
+    };
 
     //output
     const output = {
@@ -162,15 +173,18 @@ function RecipeForm ({ setFormVisible }) {
                 {/* ingredients */}
                 <div className='label'>Ingredients</div>
                 {formData.ingredients.map((ingredient, index) => (
-                    <IngredientForm
-                    ingredient={ingredient}
-                    index={index} 
-                    onAmountChange={(event) => handleIngredientChange(event, index, 'amount')}
-                    onUnitChange={(event) => handleIngredientChange(event, index, 'unit')}
-                    onItemChange={(event) => handleIngredientChange(event, index, 'item')}
-                    onClick={handleAddIngredient}
-                    setFormData={setFormData}
-                    />
+                    <div className='field'>
+                        <IngredientForm
+                        ingredient={ingredient}
+                        index={index} 
+                        onAmountChange={(event) => handleIngredientChange(event, index, 'amount')}
+                        onUnitChange={(event) => handleIngredientChange(event, index, 'unit')}
+                        onItemChange={(event) => handleIngredientChange(event, index, 'item')}
+                        onClick={handleAddIngredient}
+                        setFormData={setFormData}
+                        />
+                        <button onClick={(event) => handleDeleteIngredients(event, index)}><RiDeleteBinFill /></button>
+                    </div>
                 ))}
                 <button onClick={handleAddIngredient}>Add Ingredient</button>
                 {/* instructions */}
@@ -189,6 +203,7 @@ function RecipeForm ({ setFormVisible }) {
                                 value={instruction}
                                 onChange={(event) => handleInstructionChange(event, index)} 
                             />
+                            <button onClick={(event) => handleDeleteInstructions(event, index)}><RiDeleteBinFill /></button>
                         </div>
                     </div>
                 ))

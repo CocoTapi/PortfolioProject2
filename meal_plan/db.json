@@ -235,6 +235,31 @@
         "wrap it "
       ],
       "id": 16
+    },
+    {
+      "userName": "Winter",
+      "title": "flench fries",
+      "eatWith": "bread",
+      "prepTime": "10",
+      "cookTime": "15",
+      "servings": "2",
+      "ingredients": [
+        {
+          "amount": "1",
+          "unit": "pound",
+          "item": "potatoes"
+        },
+        {
+          "amount": "2",
+          "unit": "teaspoon",
+          "item": "salt"
+        }
+      ],
+      "instructions": [
+        "cut vegies",
+        "mix all"
+      ],
+      "id": 17
     }
   ]
 }
