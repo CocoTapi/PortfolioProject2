@@ -10,7 +10,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const recipeApi = createApi({
 	reducerPath: 'recipes',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
+		baseUrl: 'http://localhost:3005', //this must change if your IP changes
 		fetchFn: async (...args) => {
 			//REMOVE FOR PRODUCTION. ONLY FOR TEST
 			// await pause(1000); //removing this as we no longer want to simulate delays

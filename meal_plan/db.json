@@ -153,6 +153,57 @@
         ""
       ],
       "id": 12
+    },
+    {
+      "userName": "Winter",
+      "title": "curry",
+      "eatWith": "rice",
+      "protein": "chicken",
+      "prepTime": "10",
+      "cookTime": "20",
+      "servings": "5",
+      "ingredients": [
+        "1 chicken breast",
+        "cabbage",
+        "sugar"
+      ],
+      "instructions": [
+        "cut beef and broccoli",
+        "cut all vegetables "
+      ],
+      "id": 13
+    },
+    {
+      "title": "curry",
+      "ingredients": [
+        {
+          "amount": "1",
+          "unit": "cup",
+          "item": ""
+        },
+        {
+          "amount": "5",
+          "unit": "tbs",
+          "item": ""
+        }
+      ],
+      "id": 14
+    },
+    {
+      "title": "donuts",
+      "ingredients": [
+        {
+          "amount": "1",
+          "unit": "cup",
+          "item": ""
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp",
+          "item": ""
+        }
+      ],
+      "id": 15
     }
   ]
 }

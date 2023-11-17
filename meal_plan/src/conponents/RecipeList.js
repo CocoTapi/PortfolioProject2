@@ -1,9 +1,10 @@
 import { useFetchRecipeQuery } from "../store";
 import RecipeListItem from "./RecipeListItem";
+import {useState} from 'react';
 
 function RecipeList ({ searchTerm }) {
     const { data, error, isFetching } = useFetchRecipeQuery();
-
+    const [filterTerm, setFilterTerm ] = useState(searchTerm);
     let content;
     if (isFetching) {
         content = <div>Loading</div>
@@ -13,7 +14,7 @@ function RecipeList ({ searchTerm }) {
       } else {
         content = data
             .filter((recipe) => {
-               return recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
+               return recipe.title.toLowerCase().includes(filterTerm.toLowerCase());
             })
             .map(recipe => {
             return <RecipeListItem key={recipe.id} recipe={recipe} />
@@ -23,8 +24,8 @@ function RecipeList ({ searchTerm }) {
     return (
         <div>
             <p>
-                {/* ADD FUNCTION LATER */}
-                <button class="button is-success is-inverted">Chicken</button>
+                {/*TODO: ADD FUNCTION LATER */}
+                <button class="button is-success is-inverted" onClick={()=> setFilterTerm('chicken')}>Chicken</button>
                 <button class="button is-success is-inverted">Pork</button>
                 <button class="button is-success is-inverted">Beef</button>
                 <button class="button is-success is-inverted">Seafood</button>
