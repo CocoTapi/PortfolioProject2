@@ -2,6 +2,7 @@ import { useAddRecipeMutation } from '../../store';
 import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 function RecipeForm ({ setFormVisible }) {
     const initial = {
@@ -73,6 +74,10 @@ function RecipeForm ({ setFormVisible }) {
         e.preventDefault();
         addRecipe(output);
         setFormData(initial);
+        setFormVisible(false);
+    }
+
+    const handleClose = () => {
         setFormVisible(false);
     }
 
@@ -213,6 +218,7 @@ function RecipeForm ({ setFormVisible }) {
                     <button className="button is-link">Submit</button>
                 </div>
             </form>
+            <button onClick={handleClose}><AiFillCloseCircle /></button>
         </div>
     )
 }
