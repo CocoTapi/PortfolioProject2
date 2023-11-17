@@ -1,78 +1,67 @@
-import { useAddRecipeMutation } from '../store';
+import { useAddRecipeMutation } from '../../store';
 import { useState } from 'react';
+import IngredientForm from './IngredientForm';
 
 function RecipeForm ({ setFormVisible }) {
-    const [formData, setFormData] = useState(
-        {
-            userName: "",
-            title: "", 
-            eatWith: "", 
-            protein: "",
-            prepTime: "",
-            cookTime: "",
-            servings: "",
-            ingredients: [""],
-            instructions: [""]
-        }
-    );
-
+    const initial = {
+        userName: "",
+        title: "", 
+        eatWith: "", 
+        prepTime: "",
+        cookTime: "",
+        servings: "",
+        ingredients: [{ amount: "", unit: "", item: "" }],
+        instructions: [""]
+    }
+    const [formData, setFormData] = useState(initial);
     const [addRecipe] = useAddRecipeMutation();
     
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData((prevFormData) => ({...prevFormData, [name]: value}))
     };
-    
-    //for ingredients FIX LATER
-    const handleIngredientChange = (event, index) => {
-        const newIngredients = [...formData.ingredients];
-        newIngredients[index] = event.target.value;
-        setFormData((prevFormData) => ({ ...prevFormData, ingredients: newIngredients }));
-    }
 
+    //for ingredients
+    const handleIngredientChange = (event, index, property) => {
+        const newIngredients = [...formData.ingredients];
+        newIngredients[index][property] = event.target.value;
+        setFormData((prevFormData) => ({ ...prevFormData, ingredients: newIngredients }));
+    };
     const handleAddIngredient = (event) => {
         event.preventDefault();
-        setFormData((prevFormData) => ({ ...prevFormData, ingredients: [...prevFormData.ingredients, ""]}));
-    }
+        setFormData((prevFormData) => ({ ...prevFormData, ingredients: [...prevFormData.ingredients, { amount: "", unit: "", item: "" }] }));
+    };
 
-    //for instructions FIX LATER
+    //for instructions
     const handleInstructionChange = (event, index) => {
         const newInstructions = [...formData.instructions];
         newInstructions[index] = event.target.value;
         setFormData((prevFormData) => ({ ...prevFormData, instructions: newInstructions }));
     }
-
     const handleAddInstruction = (event) => {
         event.preventDefault();
         setFormData((prevFormData) => ({ ...prevFormData, instructions: [...prevFormData.instructions, ""]}));
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        addRecipe({ 
+    //output
+    const output = {
             userName: formData.userName,
             title: formData.title, 
             eatWith: formData.eatWith, 
-            protein: formData.protein,
             prepTime: formData.prepTime,
             cookTime: formData.cookTime,
             servings: formData.servings,
-            ingredients: formData.ingredients,
+            ingredients: [],
             instructions: formData.instructions
-         });
-        setFormData(
-            {
-                userName: "",
-                title: "", 
-                eatWith: "", 
-                protein: "",
-                prepTime: "",
-                cookTime: "",
-                servings: "",
-                ingredients: [""],
-                instructions: [""]
-            }
-        );
+    }
+    for (const ingredient of formData.ingredients) {
+        output.ingredients.push({ amount: ingredient.amount, unit: ingredient.unit, item: ingredient.item });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addRecipe(output);
+        setFormData(initial);
         setFormVisible(false);
     }
 
@@ -80,6 +69,7 @@ function RecipeForm ({ setFormVisible }) {
         <div className="menu-form panel">
             <h4 className="subtitle is-3">Add Recipe</h4>
             <form onSubmit={handleSubmit}>
+                {/* user name */}
                 <div className="field-group">
                     <div className="field">
                         <label className="label" htmlFor='userName'>User Name</label>
@@ -93,6 +83,7 @@ function RecipeForm ({ setFormVisible }) {
                         />
                     </div>
                 </div>
+                {/* trcipe title */}
                 <div className="field-group">
                     <div className="field">
                         <label className="label" htmlFor='title'>Recipe Title</label>
@@ -106,6 +97,7 @@ function RecipeForm ({ setFormVisible }) {
                         />
                     </div>
                 </div>
+                {/* eat with */}
                 <div className="field-group">
                     <div className="field">
                         <label className="label" htmlFor='eatWith'>Eat with</label>
@@ -123,24 +115,7 @@ function RecipeForm ({ setFormVisible }) {
                         </div> 
                     </div>
                 </div>
-                <div className="field-group">
-                    <div className="field">
-                        <label className="label" htmlFor='protein'>Protein</label>
-                        <div className="control">
-                            <div className="select">
-                                <select id='protein' name="protein" value={formData.protein} onChange={handleChange}>
-                                <option>Select One</option>
-                                <option value="chicken">Chicken</option>
-                                <option value="pork">Pork</option>
-                                <option value="beef">Beaf</option>
-                                <option value="seafood">seafood</option>
-                                <option value="beans">Beans</option>
-                                <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
+                {/* prep time */}
                 <div className="field-group">
                     <div className="field">
                         <label className="label" htmlFor='prepTime'>Prep Time</label>
@@ -155,6 +130,7 @@ function RecipeForm ({ setFormVisible }) {
                         <div>mins</div>
                     </div>
                 </div>
+                {/* cook time */}
                 <div className="field-group">
                     <div className="field">
                         <label className="label" htmlFor='cookTime'>Cook Time</label>
@@ -169,6 +145,7 @@ function RecipeForm ({ setFormVisible }) {
                         <div>mins</div>
                     </div>
                 </div>
+                {/* servings */}
                 <div className="field-group">
                     <div className="field">
                         <label className="label" htmlFor='servings'>Servings</label>
@@ -182,26 +159,21 @@ function RecipeForm ({ setFormVisible }) {
                         />
                     </div>
                 </div>
+                {/* ingredients */}
                 <div className='label'>Ingredients</div>
                 {formData.ingredients.map((ingredient, index) => (
-                    <div className="field-group" key={index} >
-                        <div className="field">
-                            <label className="label" htmlFor={`ingredient-${index}`}>
-                                {index + 1}
-                            </label>
-                            <input 
-                                className="inout is-expanded"
-                                type='text'
-                                id={`ingredient-${index}`}
-                                name={`ingredient-${index}`}
-                                value={ingredient}
-                                onChange={(event) => handleIngredientChange(event, index)} 
-                            />
-                        </div>
-                    </div>
-                ))
-                }
+                    <IngredientForm
+                    ingredient={ingredient}
+                    index={index} 
+                    onAmountChange={(event) => handleIngredientChange(event, index, 'amount')}
+                    onUnitChange={(event) => handleIngredientChange(event, index, 'unit')}
+                    onItemChange={(event) => handleIngredientChange(event, index, 'item')}
+                    onClick={handleAddIngredient}
+                    setFormData={setFormData}
+                    />
+                ))}
                 <button onClick={handleAddIngredient}>Add Ingredient</button>
+                {/* instructions */}
                 <div className='label'>Instructions</div>
                 {formData.instructions.map((instruction, index) => (
                     <div className="field-group" key={index} >
