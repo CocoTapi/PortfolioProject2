@@ -33,6 +33,14 @@ const recipeApi = createApi({
 					};
 				},
 			}),
+			fetchRecipeById: builder.query({
+				query: (recipe) => {
+					return {
+						url: `/recipes/${recipe.id}`,
+						method: 'GET',
+					};
+				},
+			}),
 			addRecipe: builder.mutation({
 				invalidatesTags: (result, error, recipe) => {
 					return [{ type: 'Recipe' }];
@@ -92,5 +100,11 @@ const recipeApi = createApi({
 	},
 });
 
-export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation, useEditRecipeMutation } = recipeApi;
+export const { 
+	useFetchRecipeQuery,
+	useFetchRecipeByIdQuery, 
+	useAddRecipeMutation, 
+	useRemoveRecipeMutation, 
+	useEditRecipeMutation
+ } = recipeApi;
 export { recipeApi };

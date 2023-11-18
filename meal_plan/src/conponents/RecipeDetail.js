@@ -7,6 +7,7 @@ function RecipeDetail ({ recipe }) {
     const handleClick = () => {
         setOpenEditPage(true);
     }
+    console.log(recipe)
 
     return (
         <div>
