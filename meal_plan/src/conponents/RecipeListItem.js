@@ -2,10 +2,10 @@ import { useState } from "react";
 import RecipeInstruction from "./RecipeInstruction";
 
 function RecipeListItem ({ recipe }) {
-    const [goRecipe, setGoRecipe ] = useState(false);
+    const [openDetail, setOpenDetail ] = useState(false);
 
     const handleClick = () => {
-        setGoRecipe(true);
+        setOpenDetail(true);
     }
 
     return (
@@ -28,7 +28,7 @@ function RecipeListItem ({ recipe }) {
                         <div>Prep Time: {recipe.prepTime} min | Cook Time: {recipe.cookTime} min | Total Time: {parseInt(recipe.prepTime) + parseInt(recipe.cookTime)} min</div>
                     </div>
                 </div>
-                {goRecipe && <RecipeInstruction key={recipe.id} recipe={recipe}/>}
+                {openDetail && <RecipeInstruction key={recipe.id} recipe={recipe}/>}
             </div>
         </div>
     )
