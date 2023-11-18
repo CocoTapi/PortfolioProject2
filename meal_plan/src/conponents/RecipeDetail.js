@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import EditRecipe from './form/EditRecipe';
 
-function RecipeInstruction ({ recipe }) {
+function RecipeDetail ({ recipe }) {
     const [openEditPage, setOpenEditPage] = useState(false);
 
     const handleClick = () => {
@@ -37,4 +37,4 @@ function RecipeInstruction ({ recipe }) {
     )
 }
 
-export default RecipeInstruction;
+export default RecipeDetail;

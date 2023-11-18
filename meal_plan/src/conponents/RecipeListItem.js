@@ -1,5 +1,5 @@
 import { useState } from "react";
-import RecipeInstruction from "./RecipeInstruction";
+import RecipeDetail from "./RecipeDetail";
 
 function RecipeListItem ({ recipe }) {
     const [openDetail, setOpenDetail] = useState(false);
@@ -29,7 +29,7 @@ function RecipeListItem ({ recipe }) {
                         <div>Prep Time: {recipe.prepTime} min | Cook Time: {recipe.cookTime} min | Total Time: {parseInt(recipe.prepTime) + parseInt(recipe.cookTime)} min</div>
                     </div>
                 </div>
-                {openDetail && <RecipeInstruction key={recipe.id} recipe={recipe}/>}
+                {openDetail && <RecipeDetail key={recipe.id} recipe={recipe}/>}
             </div>
         </div>
     )
