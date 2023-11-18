@@ -19,4 +19,5 @@ export {
     useFetchRecipeQuery,
     useAddRecipeMutation,
     useRemoveRecipeMutation,
+    useEditRecipeMutation,
 } from './apis/recipeApi';

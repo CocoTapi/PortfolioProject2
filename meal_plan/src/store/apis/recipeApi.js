@@ -76,17 +76,21 @@ const recipeApi = createApi({
 					};
 				},
 			}),
-			searchARecipe: builder.query({
-				query: (query) => {
+			editRecipe: builder.mutation({
+				invalidatesTags: (result, error, recipe) => {
+					return [{ type: 'Recipe', id: recipe.id }];
+				},
+				query: (recipe) => {
 					return {
-						url: `search?q=${query}`,
-						method: 'GET',
+						url: `/recipes/${recipe.id}`,
+						method: 'PATCH',
 					};
 				},
-			})
+			}),
+			
 		};
 	},
 });
 
-export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation } = recipeApi;
+export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation, useEditRecipeMutation } = recipeApi;
 export { recipeApi };
