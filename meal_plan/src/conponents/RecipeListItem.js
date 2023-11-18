@@ -2,7 +2,8 @@ import { useState } from "react";
 import RecipeInstruction from "./RecipeInstruction";
 
 function RecipeListItem ({ recipe }) {
-    const [openDetail, setOpenDetail ] = useState(false);
+    const [openDetail, setOpenDetail] = useState(false);
+    //const [openEditPage, setOpenEditPage] = useState(false);
 
     const handleClick = () => {
         setOpenDetail(true);
