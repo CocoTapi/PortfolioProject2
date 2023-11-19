@@ -10,7 +10,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const recipeApi = createApi({
 	reducerPath: 'recipes',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
+		baseUrl: 'http://localhost:3005', //this must change if your IP changes
 		fetchFn: async (...args) => {
 			//REMOVE FOR PRODUCTION. ONLY FOR TEST
 			// await pause(1000); //removing this as we no longer want to simulate delays
@@ -21,6 +21,7 @@ const recipeApi = createApi({
 		return {
 			fetchRecipe: builder.query({
 				providesTags: (result, error, recipe) => {
+					console.log(result)
 					const tags = result.map((recipe) => {
 						return { type: 'Recipe', id: recipe.id };
 					});
@@ -33,6 +34,14 @@ const recipeApi = createApi({
 					};
 				},
 			}),
+			// fetchRecipeById: builder.query({
+			// 	query: (recipe) => {
+			// 		return {
+			// 			url: `/recipes/${recipe.id}`,
+			// 			method: 'GET',
+			// 		};
+			// 	},
+			// }),
 			addRecipe: builder.mutation({
 				invalidatesTags: (result, error, recipe) => {
 					return [{ type: 'Recipe' }];
@@ -76,17 +85,27 @@ const recipeApi = createApi({
 					};
 				},
 			}),
-			searchARecipe: builder.query({
-				query: (query) => {
+			editRecipe: builder.mutation({
+				invalidatesTags: (result, error, recipe) => {
+					return [{ type: 'Recipe', id: recipe.id }];
+				},
+				query: (recipe) => {
 					return {
-						url: `search?q=${query}`,
-						method: 'GET',
+						url: `/recipes/${recipe.id}`,
+						method: 'PATCH',
 					};
 				},
-			})
+			}),
+			
 		};
 	},
 });
 
-export const { useFetchRecipeQuery, useAddRecipeMutation, useRemoveRecipeMutation } = recipeApi;
+export const { 
+	useFetchRecipeQuery,
+	// useFetchRecipeByIdQuery, 
+	useAddRecipeMutation, 
+	useRemoveRecipeMutation, 
+	useEditRecipeMutation
+ } = recipeApi;
 export { recipeApi };

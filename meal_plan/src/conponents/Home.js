@@ -1,7 +1,8 @@
-import RecipeForm from "./RecipeForm";
+import RecipeForm from "./form/RecipeForm";
 import RecipeList from "./RecipeList";
 import RecipeSearch from "./RecipeSearch";
 import { useState } from "react";
+//import TestForm from "./form/TestForm";
 
 function Home () {
     const [isFormVisible, setFormVisible] = useState(false);
@@ -18,20 +19,22 @@ function Home () {
 
     return (
         <div>
-            <nav class="panel">
-                <p class="panel-heading has-background-primary-dark has-text-white">
+            <nav>
+                <h1>
                     Healthy Diet Meal Planning
-                </p>
-                <p>
+                </h1>
+                <div>
                     <RecipeSearch 
                         onChange={handleSearchTermChange} 
                         value={searchTerm}/>
-                    <button class="button is-danger is-rounded" onClick={handleClick}>
+                    <button onClick={handleClick}>
                         Add Recipe
                     </button>
-                </p>
+                </div>
             </nav>
             {isFormVisible && <RecipeForm setFormVisible={setFormVisible}/>}
+            {/* {isFormVisible && <TestForm setFormVisible={setFormVisible}/>} */}
+
             <RecipeList searchTerm={searchTerm} />
         </div>
     )
