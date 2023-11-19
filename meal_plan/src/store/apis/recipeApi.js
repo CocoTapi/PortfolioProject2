@@ -21,7 +21,7 @@ const recipeApi = createApi({
 		return {
 			fetchRecipe: builder.query({
 				providesTags: (result, error, recipe) => {
-					console.log(result)
+					//console.log(result)
 					const tags = result.map((recipe) => {
 						return { type: 'Recipe', id: recipe.id };
 					});

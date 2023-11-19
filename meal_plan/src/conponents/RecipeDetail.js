@@ -12,11 +12,11 @@ function RecipeDetail ({ recipe, onClick }) {
         <div>
             {openEditPage ? [
                 // 
-                <div>
+                <div key="edit-recipe">
                     <EditRecipe key={recipe.id} recipe={recipe}/>
                 </div>
             ] : [
-                <div>
+                <div key={`recipe-detail-${recipe.id}`}>
                     <div>
                     <div>Ingredients</div>
                         <ul>

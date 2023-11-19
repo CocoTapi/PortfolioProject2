@@ -180,6 +180,7 @@ function RecipeForm ({ setFormVisible }) {
                 {formData.ingredients.map((ingredient, index) => (
                     <div className='field'>
                         <IngredientForm
+                        key={`ingredient-${index}`}
                         ingredient={ingredient}
                         index={index} 
                         onAmountChange={(event) => handleIngredientChange(event, index, 'amount')}

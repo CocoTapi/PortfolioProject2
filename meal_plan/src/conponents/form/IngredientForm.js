@@ -1,7 +1,7 @@
 function IngredientForm({ ingredient, index, onAmountChange, onUnitChange, onItemChange }) {
     return (
         <div>
-            <div className="field-group" key={index} >
+            <div className="field-group" key={`ingredient-${index}`} >
                 <div className="field">
                     <label className="label" htmlFor={`amount-${index}`}>
                         {index + 1}
@@ -32,12 +32,12 @@ function IngredientForm({ ingredient, index, onAmountChange, onUnitChange, onIte
                             </select>
                     </div>
                     <div>of</div>
-                    <label className="label" htmlFor={`unit-${index}`}></label>
+                    <label className="label" htmlFor={`item-${index}`}></label>
                         <input
                             className="inout is-expanded"
                             type='text'
-                            id={`unit-${index}`}
-                            name={`unit-${index}`}
+                            id={`item-${index}`}
+                            name={`item-${index}`}
                             value={ingredient.item}
                             placeholder='salt'
                             onChange={onItemChange}

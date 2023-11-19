@@ -85,8 +85,8 @@ function EditRecipe ({ recipe }) {
     }
 
     return (
-        <div className="menu-form panel">
-            <h4 className="subtitle is-3">Add Recipe</h4>
+        <div className="menu-form panel" key={`edit-recipe-${recipe.id}`}>
+            <h4 className="subtitle is-3">Edit Recipe</h4>
             <form onSubmit={handleSubmit}>
                 {/* user name */}
                 <div className="field-group">
@@ -181,7 +181,7 @@ function EditRecipe ({ recipe }) {
                 {/* ingredients */}
                 <div className='label'>Ingredients</div>
                 {formData.ingredients.map((ingredient, index) => (
-                    <div className='field'>
+                    <div className='field' key={`ingredient-${index}`}>
                         <IngredientForm
                         ingredient={ingredient}
                         index={index} 
@@ -198,7 +198,7 @@ function EditRecipe ({ recipe }) {
                 {/* instructions */}
                 <div className='label'>Instructions</div>
                 {formData.instructions.map((instruction, index) => (
-                    <div className="field-group" key={index} >
+                    <div className="field-group" key={`instruction-${index}`} >
                         <div className="field">
                             <label className="label" htmlFor={`instruction-${index}`}>
                                 {index + 1}
