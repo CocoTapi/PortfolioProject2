@@ -16,7 +16,7 @@ function RecipeDetail ({ recipe }) {
                 <div>Edit Page</div>
             ] : [ */}
                 <div>
-                    <div class="content">
+                    <div>
                     <div>Ingredients</div>
                         <ul>
                             {recipe.ingredients.map((ingredient, i) => (
@@ -24,7 +24,7 @@ function RecipeDetail ({ recipe }) {
                             ))}
                         </ul>
                     </div>
-                    <div class="content">
+                    <div>
                         <div>Instructions</div>
                         <ol>
                             {recipe.instructions.map((instruction, i) => (
