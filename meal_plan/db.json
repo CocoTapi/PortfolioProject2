@@ -1,0 +1,265 @@
+{
+  "recipes": [
+    {
+      "userName": "Winter",
+      "title": "Pork Dumplings",
+      "eatWith": "other",
+      "protein": "pork",
+      "prepTime": "30",
+      "cookTime": "10",
+      "servings": "50",
+      "ingredients": [
+        "1lb of ground pork",
+        "1/4 cut of cabbage",
+        "a pinch of garlic"
+      ],
+      "instructions": [
+        "cut vegies",
+        "mix pork and vegies",
+        "wrap it "
+      ],
+      "id": 1
+    },
+    {
+      "userName": "z",
+      "title": "water",
+      "eatWith": "all of them",
+      "protein": "other",
+      "prepTime": "0",
+      "cookTime": "0",
+      "servings": "1",
+      "ingredients": [
+        "water",
+        ""
+      ],
+      "instructions": [
+        "drink"
+      ],
+      "id": 5
+    },
+    {
+      "userName": "Winter",
+      "title": "Vinegar Chicken ",
+      "eatWith": "rice",
+      "protein": "chicken",
+      "prepTime": "10",
+      "cookTime": "15",
+      "servings": "3",
+      "ingredients": [
+        "1 chicken breast",
+        "1 potato",
+        "1 carrot",
+        "1 bell pepper",
+        "50ml of soy sauce",
+        ""
+      ],
+      "instructions": [
+        "cut chicken and marinate it with mirin. ",
+        "cut all vegetables "
+      ],
+      "id": 7
+    },
+    {
+      "userName": "Winter",
+      "title": "Shrimp roll",
+      "eatWith": "all of them",
+      "protein": "seafood",
+      "prepTime": "20",
+      "cookTime": "1",
+      "servings": "6",
+      "ingredients": [
+        "6 rice pepers",
+        "18 shrimps",
+        "10g of rice noodle",
+        "1 sliced carrot",
+        "1 lettuce"
+      ],
+      "instructions": [
+        "marinate shrimp with sake, ginger, and salt",
+        "cut lettuce"
+      ],
+      "id": 8
+    },
+    {
+      "userName": "Spring",
+      "title": "Beef and broccolis ",
+      "eatWith": "rice",
+      "protein": "beef",
+      "prepTime": "15",
+      "cookTime": "15",
+      "servings": "4",
+      "ingredients": [
+        "1 lb of beef",
+        "broccolis",
+        "soy sauce",
+        "brown sugar"
+      ],
+      "instructions": [
+        "cut beef and broccoli",
+        "mix all seasonings ",
+        "cook beef with vegetable oil"
+      ],
+      "id": 9
+    },
+    {
+      "userName": "Summer",
+      "title": "Pizza Dough",
+      "eatWith": "other",
+      "protein": "other",
+      "prepTime": "60",
+      "cookTime": "0",
+      "servings": "3",
+      "ingredients": [
+        "bread flour",
+        "lukewarm water",
+        "sugar",
+        "olive oil",
+        "yeast"
+      ],
+      "instructions": [
+        "mix yeast, sugar and lukewarm water.",
+        "add everything in a bowl and knead it for 10 min"
+      ],
+      "id": 10
+    },
+    {
+      "userName": "Spring",
+      "title": "Curry",
+      "eatWith": "",
+      "protein": "",
+      "prepTime": "",
+      "cookTime": "",
+      "servings": "",
+      "ingredients": [
+        ""
+      ],
+      "instructions": [
+        ""
+      ],
+      "id": 11
+    },
+    {
+      "userName": "Spring",
+      "title": "chicken soup",
+      "eatWith": "",
+      "protein": "",
+      "prepTime": "",
+      "cookTime": "",
+      "servings": "",
+      "ingredients": [
+        ""
+      ],
+      "instructions": [
+        ""
+      ],
+      "id": 12
+    },
+    {
+      "userName": "Winter",
+      "title": "curry",
+      "eatWith": "rice",
+      "protein": "chicken",
+      "prepTime": "10",
+      "cookTime": "20",
+      "servings": "5",
+      "ingredients": [
+        "1 chicken breast",
+        "cabbage",
+        "sugar"
+      ],
+      "instructions": [
+        "cut beef and broccoli",
+        "cut all vegetables "
+      ],
+      "id": 13
+    },
+    {
+      "title": "curry",
+      "ingredients": [
+        {
+          "amount": "1",
+          "unit": "cup",
+          "item": ""
+        },
+        {
+          "amount": "5",
+          "unit": "tbs",
+          "item": ""
+        }
+      ],
+      "id": 14
+    },
+    {
+      "title": "donuts",
+      "ingredients": [
+        {
+          "amount": "1",
+          "unit": "cup",
+          "item": ""
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp",
+          "item": ""
+        }
+      ],
+      "id": 15
+    },
+    {
+      "userName": "Winter",
+      "title": "pho",
+      "eatWith": "other",
+      "prepTime": "10",
+      "cookTime": "15",
+      "servings": "5",
+      "ingredients": [
+        {
+          "amount": "1",
+          "unit": "piece",
+          "item": "chicken"
+        },
+        {
+          "amount": "5",
+          "unit": "cup",
+          "item": "water"
+        },
+        {
+          "amount": "",
+          "unit": "",
+          "item": ""
+        }
+      ],
+      "instructions": [
+        "cut vegies",
+        "cut lettuce",
+        "wrap it "
+      ],
+      "id": 16
+    },
+    {
+      "userName": "Winter",
+      "title": "flench fries",
+      "eatWith": "bread",
+      "prepTime": "10",
+      "cookTime": "15",
+      "servings": "2",
+      "ingredients": [
+        {
+          "amount": "1",
+          "unit": "pound",
+          "item": "potatoes"
+        },
+        {
+          "amount": "2",
+          "unit": "teaspoon",
+          "item": "salt"
+        }
+      ],
+      "instructions": [
+        "cut vegies",
+        "mix all"
+      ],
+      "id": 17
+    }
+  ]
+}
