@@ -1,13 +1,16 @@
-//import { useState } from "react";
-//import RecipeDetail from "./RecipeDetail";
+import { useState } from "react";
+import RecipeDetail from "./RecipeDetail";
 
 function RecipeListItem ({ recipe }) {
-    // const [openDetail, setOpenDetail] = useState(false);
-    // //const [openEditPage, setOpenEditPage] = useState(false);
+    const [openDetail, setOpenDetail] = useState(false);
 
-    // const handleClick = () => {
-    //     setOpenDetail(true);
-    // }
+    const handleClick = () => {
+        setOpenDetail(true);
+    }
+
+    const handleClose = () => {
+        setOpenDetail(false);
+    }
 
     return (
         <div>
@@ -17,10 +20,10 @@ function RecipeListItem ({ recipe }) {
                     <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/707175.jpeg" alt="Placeholder image"/>
                     </figure>
                 </div> */}
-                <div>
+                <div onClick={handleClick}>
                     <div>
                         <div>
-                            <p>{recipe.title}</p>
+                            <h2>{recipe.title}</h2>
                             <p>by {recipe.userName}</p>
                         </div>
                     </div>
@@ -29,7 +32,7 @@ function RecipeListItem ({ recipe }) {
                         <div>Prep Time: {recipe.prepTime} min | Cook Time: {recipe.cookTime} min | Total Time: {parseInt(recipe.prepTime) + parseInt(recipe.cookTime)} min</div>
                     </div>
                 </div>
-                {/* {openDetail && <RecipeDetail key={recipe.id} recipe={recipe}/>} */}
+                {openDetail && <RecipeDetail key={recipe.id} recipe={recipe} onClick={handleClose}/>}
             </div>
         </div>
     )

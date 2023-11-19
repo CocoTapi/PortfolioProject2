@@ -2,10 +2,9 @@
 import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
-import { AiFillCloseCircle } from "react-icons/ai";
 //import { useHistory } from 'react-router-dom';
 
-function EditRecipe ({ recipe, setOpenEditPage }) {
+function EditRecipe ({ recipe }) {
     //const { data } = useFetchRecipeByIdQuery();
     //const [updateRecipe] = useEditRecipeMutation();
     const initial = {
@@ -79,12 +78,9 @@ function EditRecipe ({ recipe, setOpenEditPage }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(output);
         //await updateRecipe(output)
         //history.push(`/recipes/${recipe.id}`);
-        //setOpenEditPage(false);
-    }
-
-    const handleClose = () => {
         //setOpenEditPage(false);
     }
 
@@ -106,7 +102,7 @@ function EditRecipe ({ recipe, setOpenEditPage }) {
                         />
                     </div>
                 </div>
-                {/* trcipe title */}
+                {/* recipe title */}
                 <div className="field-group">
                     <div className="field">
                         <label className="label" htmlFor='title'>Recipe Title</label>
@@ -225,7 +221,6 @@ function EditRecipe ({ recipe, setOpenEditPage }) {
                     <button className="button is-link">Submit</button>
                 </div>
             </form>
-            <button onClick={handleClose}><AiFillCloseCircle /></button>
         </div>
     )
 }

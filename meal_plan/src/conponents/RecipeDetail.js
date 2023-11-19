@@ -1,26 +1,27 @@
-//import { useState } from 'react';
-//import EditRecipe from './form/EditRecipe';
+import { useState } from 'react';
+import EditRecipe from './form/EditRecipe';
 
-function RecipeDetail ({ recipe }) {
-    // const [openEditPage, setOpenEditPage] = useState(false);
+function RecipeDetail ({ recipe, onClick }) {
+    const [openEditPage, setOpenEditPage] = useState(false);
 
-    // const handleClick = () => {
-    //     setOpenEditPage(true);
-    // }
-    // console.log(recipe)
+    const handleClick = () => {
+        setOpenEditPage(true);
+    }
 
     return (
         <div>
-            {/* {openEditPage ? [
+            {openEditPage ? [
                 // 
-                <div>Edit Page</div>
-            ] : [ */}
+                <div>
+                    <EditRecipe key={recipe.id} recipe={recipe}/>
+                </div>
+            ] : [
                 <div>
                     <div>
                     <div>Ingredients</div>
                         <ul>
                             {recipe.ingredients.map((ingredient, i) => (
-                            <li key={i}>{ingredient}</li>  
+                            <li key={i}>{ingredient.amount} {ingredient.unit} {ingredient.item}</li>  
                             ))}
                         </ul>
                     </div>
@@ -32,9 +33,10 @@ function RecipeDetail ({ recipe }) {
                             ))}
                         </ol>
                     </div>
-                    {/* <button onClick={handleClick}>Edit</button> */}
+                    <button onClick={handleClick}>Edit</button>
+                    <button onClick={onClick}>Close</button>
                 </div>
-            {/* ]} */}
+            ]}
         </div>
     )
 }
