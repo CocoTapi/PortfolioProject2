@@ -21,6 +21,7 @@ const recipeApi = createApi({
 		return {
 			fetchRecipe: builder.query({
 				providesTags: (result, error, recipe) => {
+					console.log(result)
 					const tags = result.map((recipe) => {
 						return { type: 'Recipe', id: recipe.id };
 					});
@@ -33,14 +34,14 @@ const recipeApi = createApi({
 					};
 				},
 			}),
-			fetchRecipeById: builder.query({
-				query: (recipe) => {
-					return {
-						url: `/recipes/${recipe.id}`,
-						method: 'GET',
-					};
-				},
-			}),
+			// fetchRecipeById: builder.query({
+			// 	query: (recipe) => {
+			// 		return {
+			// 			url: `/recipes/${recipe.id}`,
+			// 			method: 'GET',
+			// 		};
+			// 	},
+			// }),
 			addRecipe: builder.mutation({
 				invalidatesTags: (result, error, recipe) => {
 					return [{ type: 'Recipe' }];
@@ -102,7 +103,7 @@ const recipeApi = createApi({
 
 export const { 
 	useFetchRecipeQuery,
-	useFetchRecipeByIdQuery, 
+	// useFetchRecipeByIdQuery, 
 	useAddRecipeMutation, 
 	useRemoveRecipeMutation, 
 	useEditRecipeMutation

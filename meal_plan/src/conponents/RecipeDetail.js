@@ -1,19 +1,20 @@
-import { useState } from 'react';
-import EditRecipe from './form/EditRecipe';
+//import { useState } from 'react';
+//import EditRecipe from './form/EditRecipe';
 
 function RecipeDetail ({ recipe }) {
-    const [openEditPage, setOpenEditPage] = useState(false);
+    // const [openEditPage, setOpenEditPage] = useState(false);
 
-    const handleClick = () => {
-        setOpenEditPage(true);
-    }
-    console.log(recipe)
+    // const handleClick = () => {
+    //     setOpenEditPage(true);
+    // }
+    // console.log(recipe)
 
     return (
         <div>
-            {openEditPage ? [
-                <EditRecipe recipe={recipe} />
-            ] : [
+            {/* {openEditPage ? [
+                // 
+                <div>Edit Page</div>
+            ] : [ */}
                 <div>
                     <div class="content">
                     <div>Ingredients</div>
@@ -31,9 +32,9 @@ function RecipeDetail ({ recipe }) {
                             ))}
                         </ol>
                     </div>
-                    <button onClick={handleClick}>Edit</button>
+                    {/* <button onClick={handleClick}>Edit</button> */}
                 </div>
-            ]}
+            {/* ]} */}
         </div>
     )
 }

@@ -1,13 +1,13 @@
-import { useEditRecipeMutation } from "../../store";
+//import { useEditRecipeMutation } from "../../store";
 import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 
-function editRecipe ({ recipe, setOpenEditPage }) {
+function EditRecipe ({ recipe, setOpenEditPage }) {
     //const { data } = useFetchRecipeByIdQuery();
-    const [updateRecipe] = useEditRecipeMutation();
+    //const [updateRecipe] = useEditRecipeMutation();
     const initial = {
         userName: recipe.userName,
         title: recipe.title, 
@@ -23,7 +23,7 @@ function editRecipe ({ recipe, setOpenEditPage }) {
     }
 
     const [formData, setFormData] = useState(initial);
-    const history = useHistory();
+    //const history = useHistory();
     
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -79,13 +79,13 @@ function editRecipe ({ recipe, setOpenEditPage }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await updateRecipe(output)
-        history.push(`/recipes/${recipe.id}`);
-        setOpenEditPage(false);
+        //await updateRecipe(output)
+        //history.push(`/recipes/${recipe.id}`);
+        //setOpenEditPage(false);
     }
 
     const handleClose = () => {
-        setOpenEditPage(false);
+        //setOpenEditPage(false);
     }
 
     return (
@@ -230,4 +230,4 @@ function editRecipe ({ recipe, setOpenEditPage }) {
     )
 }
 
-export default editRecipe;
+export default EditRecipe;

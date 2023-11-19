@@ -17,7 +17,7 @@ setupListeners(store.dispatch);
 
 export {
     useFetchRecipeQuery,
-    useFetchRecipeByIdQuery,
+    //useFetchRecipeByIdQuery,
     useAddRecipeMutation,
     useRemoveRecipeMutation,
     useEditRecipeMutation,
