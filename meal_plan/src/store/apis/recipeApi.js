@@ -93,6 +93,7 @@ const recipeApi = createApi({
 					return {
 						url: `/recipes/${recipe.id}`,
 						method: 'PATCH',
+						body: recipe
 					};
 				},
 			}),
@@ -103,7 +104,7 @@ const recipeApi = createApi({
 
 export const { 
 	useFetchRecipeQuery,
-	// useFetchRecipeByIdQuery, 
+	//useFetchRecipeByIdQuery, 
 	useAddRecipeMutation, 
 	useRemoveRecipeMutation, 
 	useEditRecipeMutation

@@ -9,13 +9,35 @@
       "cookTime": "10",
       "servings": "50",
       "ingredients": [
-        "1lb of ground pork",
-        "1/4 cut of cabbage",
-        "a pinch of garlic"
+        {
+          "amount": "1",
+          "unit": "pound",
+          "item": "ground pork"
+        },
+        {
+          "amount": "2",
+          "unit": "piece",
+          "item": "green onions"
+        },
+        {
+          "amount": "1",
+          "unit": "tablespoon",
+          "item": "soy sauce"
+        },
+        {
+          "amount": "1",
+          "unit": "tablespoon",
+          "item": "mirin"
+        },
+        {
+          "amount": "1",
+          "unit": "tablespoon",
+          "item": "cooking sake"
+        }
       ],
       "instructions": [
         "cut vegies",
-        "mix pork and vegies",
+        "add all seasoning, pork, and vegies and mix well",
         "wrap it "
       ],
       "id": 1
@@ -245,7 +267,7 @@
       "servings": "2",
       "ingredients": [
         {
-          "amount": "1",
+          "amount": "10",
           "unit": "pound",
           "item": "potatoes"
         },
@@ -257,7 +279,8 @@
       ],
       "instructions": [
         "cut vegies",
-        "mix all"
+        "mix all",
+        "add olive oil"
       ],
       "id": 17
     }

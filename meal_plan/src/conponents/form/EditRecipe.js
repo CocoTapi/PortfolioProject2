@@ -1,12 +1,11 @@
-//import { useEditRecipeMutation } from "../../store";
+import { useEditRecipeMutation } from "../../store";
 import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
 //import { useHistory } from 'react-router-dom';
 
 function EditRecipe ({ recipe }) {
-    //const { data } = useFetchRecipeByIdQuery();
-    //const [updateRecipe] = useEditRecipeMutation();
+    const [updateRecipe, { isLoading, error }] = useEditRecipeMutation();
     const initial = {
         userName: recipe.userName,
         title: recipe.title, 
@@ -70,7 +69,8 @@ function EditRecipe ({ recipe }) {
             cookTime: formData.cookTime,
             servings: formData.servings,
             ingredients: [],
-            instructions: formData.instructions
+            instructions: formData.instructions,
+            id: recipe.id
     }
     for (const ingredient of formData.ingredients) {
         output.ingredients.push({ amount: ingredient.amount, unit: ingredient.unit, item: ingredient.item });
@@ -78,8 +78,12 @@ function EditRecipe ({ recipe }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(output);
-        //await updateRecipe(output)
+        if (output) {
+            console.log(output);
+            await updateRecipe(output)
+        } else if (error) {
+            console.log(error);
+        }
         //history.push(`/recipes/${recipe.id}`);
         //setOpenEditPage(false);
     }
@@ -221,6 +225,8 @@ function EditRecipe ({ recipe }) {
                     <button className="button is-link">Submit</button>
                 </div>
             </form>
+            {isLoading && <div>Loading...</div>}
+            {error && <div>Error updating recipe</div>}
         </div>
     )
 }
