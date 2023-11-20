@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import EditRecipe from './form/EditRecipe';
+import Button from './Button';
 
 function RecipeDetail ({ recipe, onClick }) {
     const [openEditPage, setOpenEditPage] = useState(false);
@@ -37,8 +38,8 @@ function RecipeDetail ({ recipe, onClick }) {
                             ))}
                         </ol>
                     </div>
-                    <button onClick={handleClick}>Edit</button>
-                    <button onClick={onClick}>Close</button>
+                    <Button warning onClick={handleClick}>Edit</Button>
+                    <Button primary onClick={onClick}>Close</Button>
                 </div>
             ]}
         </div>

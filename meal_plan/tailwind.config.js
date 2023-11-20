@@ -7,7 +7,7 @@ module.exports = {
       extend: {
         colors: {
             'woodOrange': '#C55210', 
-            'woodpink': '#AC4E4E',
+            'woodPink': '#AC4E4E',
             'melon': '#F6B8A2',
             'wheat': '#F5DFBB',
             'mossGreen': '#D3D2B6',

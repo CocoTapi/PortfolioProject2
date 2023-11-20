@@ -2,7 +2,7 @@ import RecipeForm from "./form/RecipeForm";
 import RecipeList from "./RecipeList";
 import RecipeSearch from "./RecipeSearch";
 import { useState } from "react";
-//import TestForm from "./form/TestForm";
+import Button from "./Button";
 
 function Home () {
     const [isFormVisible, setFormVisible] = useState(false);
@@ -18,7 +18,7 @@ function Home () {
     }
 
     return (
-        <div>
+        <div className="bg-wheat">
             <nav>
                 <h1>
                     Healthy Diet Meal Planning
@@ -27,9 +27,9 @@ function Home () {
                     <RecipeSearch 
                         onChange={handleSearchTermChange} 
                         value={searchTerm}/>
-                    <button onClick={handleClick}>
+                    <Button success onClick={handleClick} className="m-2">
                         Add Recipe
-                    </button>
+                    </Button>
                 </div>
             </nav>
             {isFormVisible && <RecipeForm setFormVisible={setFormVisible}/>}

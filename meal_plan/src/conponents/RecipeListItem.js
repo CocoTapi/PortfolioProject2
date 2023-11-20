@@ -28,8 +28,12 @@ function RecipeListItem ({ recipe }) {
                         </div>
                     </div>
                     <div>
-                        <div>Eat with: {recipe.eatWith} | Protein: {recipe.protein}</div>
-                        <div>Prep Time: {recipe.prepTime} min | Cook Time: {recipe.cookTime} min | Total Time: {parseInt(recipe.prepTime) + parseInt(recipe.cookTime)} min</div>
+                        <div>
+                            Eat with: {recipe.eatWith} | Protein: {recipe.protein}
+                        </div>
+                        <div>
+                            Prep Time: {recipe.prepTime} min | Cook Time: {recipe.cookTime} min | Total Time: {parseInt(recipe.prepTime) + parseInt(recipe.cookTime)} min
+                        </div>
                     </div>
                 </div>
                 {openDetail && <RecipeDetail key={recipe.id} recipe={recipe} onClick={handleClose}/>}

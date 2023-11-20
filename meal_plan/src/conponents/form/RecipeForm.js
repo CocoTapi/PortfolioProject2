@@ -3,6 +3,7 @@ import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Button from '../Button';
 
 function RecipeForm ({ setFormVisible }) {
     const initial = {
@@ -189,10 +190,14 @@ function RecipeForm ({ setFormVisible }) {
                         onClick={handleAddIngredient}
                         setFormData={setFormData}
                         />
-                        <button onClick={(event) => handleDeleteIngredients(event, index)}><RiDeleteBinFill /></button>
+                        <Button onClick={(event) => handleDeleteIngredients(event, index)} secondary>
+                            <RiDeleteBinFill />
+                        </Button>
                     </div>
                 ))}
-                <button onClick={handleAddIngredient}>Add Ingredient</button>
+                <Button onClick={handleAddIngredient} primary>
+                    Add Ingredient
+                </Button>
                 {/* instructions */}
                 <div className='label'>Instructions</div>
                 {formData.instructions.map((instruction, index) => (
@@ -209,17 +214,21 @@ function RecipeForm ({ setFormVisible }) {
                                 value={instruction}
                                 onChange={(event) => handleInstructionChange(event, index)} 
                             />
-                            <button onClick={(event) => handleDeleteInstructions(event, index)}><RiDeleteBinFill /></button>
+                            <Button onClick={(event) => handleDeleteInstructions(event, index)} secondary>
+                                <RiDeleteBinFill />
+                            </Button>
                         </div>
                     </div>
                 ))
                 }
-                <button onClick={handleAddInstruction}>Add Instruction</button>
+                <Button onClick={handleAddInstruction} primary>
+                    Add Instruction
+                </Button>
                 <div className="field">
-                    <button className="button is-link">Submit</button>
+                    <Button success className='m-4'>Submit</Button>
                 </div>
             </form>
-            <button onClick={handleClose}><AiFillCloseCircle /></button>
+            <Button onClick={handleClose} success outline className='m-4'>Close</Button>
         </div>
     )
 }

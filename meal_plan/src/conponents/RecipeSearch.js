@@ -3,7 +3,7 @@ import { IoSearch } from "react-icons/io5";
 function RecipeSearch ({ value, onChange }) {
     return (
         <div>
-            <p>
+            <div>
                 <input 
                     type="text" 
                     placeholder="Search"
@@ -13,7 +13,7 @@ function RecipeSearch ({ value, onChange }) {
                 <span>
                     <IoSearch />
                 </span>
-            </p>
+            </div>
         </div>
     )
 }

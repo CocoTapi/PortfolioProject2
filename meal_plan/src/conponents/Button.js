@@ -15,11 +15,11 @@ function Button({
     const classes = className(
         rest.className,
         'px-3 py-1.5 border', {
-            'border-blue bg-smorkyGreen text-black' : primary,
-            'border-green bg-mossGreen text-black' : secondary,
-            'border-yellow bg-melon text-black' : success,
-            'border-orange bg-woodOrange text-white' : warning,
-            'border-red bg-woodpink text-white' : danger,
+            'border-smorkyGreen bg-smorkyGreen text-black' : primary,
+            'border-mossGreen bg-mossGreen text-black' : secondary,
+            'border-melon bg-melon text-black' : success,
+            'border-woodOrange bg-woodOrange text-white' : warning,
+            'border-woodPink bg-woodPink text-white' : danger,
             'rounded-full': rounded,
             'bg-white': outline,
             'text-smorkyGreen': outline && primary,

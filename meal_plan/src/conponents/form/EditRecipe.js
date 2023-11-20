@@ -2,6 +2,7 @@ import { useEditRecipeMutation, useRemoveRecipeMutation } from "../../store";
 import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
+import Button from "../Button";
 
 
 function EditRecipe ({ recipe, onClick }) {
@@ -198,10 +199,14 @@ function EditRecipe ({ recipe, onClick }) {
                         onClick={handleAddIngredient}
                         setFormData={setFormData}
                         />
-                        <button onClick={(event) => handleDeleteIngredients(event, index)}><RiDeleteBinFill /></button>
+                        <Button onClick={(event) => handleDeleteIngredients(event, index)} secondary>
+                            <RiDeleteBinFill />
+                        </Button>
                     </div>
                 ))}
-                <button onClick={handleAddIngredient}>Add Ingredient</button>
+                <Button onClick={handleAddIngredient} primary>
+                    Add Ingredient
+                </Button>
                 {/* instructions */}
                 <div className='label'>Instructions</div>
                 {formData.instructions.map((instruction, index) => (
@@ -218,20 +223,24 @@ function EditRecipe ({ recipe, onClick }) {
                                 value={instruction}
                                 onChange={(event) => handleInstructionChange(event, index)} 
                             />
-                            <button onClick={(event) => handleDeleteInstructions(event, index)}><RiDeleteBinFill /></button>
+                            <Button onClick={(event) => handleDeleteInstructions(event, index)} secondary>
+                                <RiDeleteBinFill />
+                            </Button>
                         </div>
                     </div>
                 ))
                 }
-                <button onClick={handleAddInstruction}>Add Instruction</button>
+                <Button onClick={handleAddInstruction} primary>
+                    Add Instruction
+                </Button>
                 <div className="field">
-                    <button className="button is-link">Submit</button>
+                    <Button success className='m-4'>Submit</Button>
                 </div>
                 <div>
-                    <button onClick={handleDeleteRecipe}>Delete Recipe</button>
+                    <Button onClick={handleDeleteRecipe} danger>Delete Recipe</Button>
                 </div>
                 <div>
-                    <button onClick={onClick}>Back</button>
+                    <Button onClick={onClick} success outline>Back</Button>
                 </div>
             </form>
             {isLoading && <div>Loading...</div>}

@@ -1,5 +1,6 @@
 import { useFetchRecipeQuery } from "../store";
 import RecipeListItem from "./RecipeListItem";
+import Button from "./Button";
 //import {useState} from 'react';
 
 function RecipeList ({ searchTerm }) {
@@ -22,14 +23,14 @@ function RecipeList ({ searchTerm }) {
       }
 
     return (
-        <div>
+        <div className="bg-wheat">
             <div>
                 {/*TODO: ADD FUNCTION LATER */}
-                <button >Chicken</button>
-                <button >Pork</button>
-                <button >Beef</button>
-                <button >Seafood</button>
-                <button >Other</button>
+                <Button primary className='mb-1'>Chicken</Button>
+                <Button primary className='mb-1'>Pork</Button>
+                <Button primary className='mb-1'>Beef</Button>
+                <Button primary className='mb-1'>Seafood</Button>
+                <Button primary className='mb-1'>Other</Button>
             </div>
             {content}
         </div>
