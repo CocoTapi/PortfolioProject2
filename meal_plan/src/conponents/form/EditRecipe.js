@@ -3,7 +3,8 @@ import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
 
-function EditRecipe ({ recipe }) {
+
+function EditRecipe ({ recipe, onClick }) {
     const [updateRecipe, { isLoading, error }] = useEditRecipeMutation();
     const [removeRecipe] = useRemoveRecipeMutation();
     const initial = {
@@ -91,7 +92,7 @@ function EditRecipe ({ recipe }) {
     }
 
     return (
-        <div className="menu-form panel" key={`edit-recipe-${recipe.id}`}>
+        <div className="menu-form" key={`edit-recipe-${recipe.id}`}>
             <h4 className="subtitle is-3">Edit Recipe</h4>
             <form onSubmit={handleSubmit}>
                 {/* user name */}
@@ -228,6 +229,9 @@ function EditRecipe ({ recipe }) {
                 </div>
                 <div>
                     <button onClick={handleDeleteRecipe}>Delete Recipe</button>
+                </div>
+                <div>
+                    <button onClick={onClick}>Back</button>
                 </div>
             </form>
             {isLoading && <div>Loading...</div>}

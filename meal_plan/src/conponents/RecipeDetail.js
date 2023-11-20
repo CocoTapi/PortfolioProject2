@@ -8,12 +8,16 @@ function RecipeDetail ({ recipe, onClick }) {
         setOpenEditPage(true);
     }
 
+    const handleGoBack = () => {
+        setOpenEditPage(false);
+    }
+
     return (
         <div>
             {openEditPage ? [
                 // 
                 <div key="edit-recipe">
-                    <EditRecipe key={recipe.id} recipe={recipe}/>
+                    <EditRecipe key={recipe.id} recipe={recipe} onClick={handleGoBack}/>
                 </div>
             ] : [
                 <div key={`recipe-detail-${recipe.id}`}>
