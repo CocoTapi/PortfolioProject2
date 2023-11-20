@@ -60,20 +60,24 @@
       "id": 5
     },
     {
-      "userName": "Winter",
-      "title": "Vinegar Chicken ",
-      "eatWith": "rice",
+      "userName": "Zack",
+      "title": "Death Chicken ",
+      "eatWith": "other",
       "protein": "chicken",
-      "prepTime": "10",
+      "prepTime": "11",
       "cookTime": "15",
       "servings": "3",
       "ingredients": [
-        "1 chicken breast",
-        "1 potato",
-        "1 carrot",
-        "1 bell pepper",
-        "50ml of soy sauce",
-        ""
+        {
+          "amount": "3",
+          "unit": "pound",
+          "item": "salt"
+        },
+        {
+          "amount": "2",
+          "unit": "pound",
+          "item": "chicken"
+        }
       ],
       "instructions": [
         "cut chicken and marinate it with mirin. ",

@@ -2,7 +2,9 @@ import Home from './conponents/Home';
 
 function App() {
   return (
-    <Home />
+    <div>
+      <Home />
+    </div>
   );
 }
 

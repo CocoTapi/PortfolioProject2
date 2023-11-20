@@ -24,11 +24,11 @@ function IngredientForm({ ingredient, index, onAmountChange, onUnitChange, onIte
                             onChange={onUnitChange}
                         >
                         <option>Select Unit</option>
-                            <option value="pound">pound</option>
-                            <option value="tablespoon">tablespoon</option>
-                            <option value="teaspoon">teaspoon</option>
-                            <option value="cup">cup</option>
-                            <option value="piece">piece</option>
+                            <option value="pound">pound(s)</option>
+                            <option value="tablespoon">tablespoon(s)</option>
+                            <option value="teaspoon">teaspoon(s)</option>
+                            <option value="cup">cup(s)</option>
+                            <option value="piece">piece(s)</option>
                             </select>
                     </div>
                     <div>of</div>
