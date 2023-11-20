@@ -1,11 +1,11 @@
-import { useEditRecipeMutation } from "../../store";
+import { useEditRecipeMutation, useRemoveRecipeMutation } from "../../store";
 import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
-//import { useHistory } from 'react-router-dom';
 
 function EditRecipe ({ recipe }) {
     const [updateRecipe, { isLoading, error }] = useEditRecipeMutation();
+    const [removeRecipe] = useRemoveRecipeMutation();
     const initial = {
         userName: recipe.userName,
         title: recipe.title, 
@@ -84,8 +84,10 @@ function EditRecipe ({ recipe }) {
         } else if (error) {
             console.log(error);
         }
-        //history.push(`/recipes/${recipe.id}`);
-        //setOpenEditPage(false);
+    }
+
+    const handleDeleteRecipe = () => {
+        removeRecipe(recipe);
     }
 
     return (
@@ -223,6 +225,9 @@ function EditRecipe ({ recipe }) {
                 <button onClick={handleAddInstruction}>Add Instruction</button>
                 <div className="field">
                     <button className="button is-link">Submit</button>
+                </div>
+                <div>
+                    <button onClick={handleDeleteRecipe}>Delete Recipe</button>
                 </div>
             </form>
             {isLoading && <div>Loading...</div>}

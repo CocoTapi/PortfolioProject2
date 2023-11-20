@@ -124,43 +124,6 @@
       "id": 9
     },
     {
-      "userName": "Summer",
-      "title": "Pizza Dough",
-      "eatWith": "other",
-      "protein": "other",
-      "prepTime": "60",
-      "cookTime": "0",
-      "servings": "3",
-      "ingredients": [
-        "bread flour",
-        "lukewarm water",
-        "sugar",
-        "olive oil",
-        "yeast"
-      ],
-      "instructions": [
-        "mix yeast, sugar and lukewarm water.",
-        "add everything in a bowl and knead it for 10 min"
-      ],
-      "id": 10
-    },
-    {
-      "userName": "Spring",
-      "title": "Curry",
-      "eatWith": "",
-      "protein": "",
-      "prepTime": "",
-      "cookTime": "",
-      "servings": "",
-      "ingredients": [
-        ""
-      ],
-      "instructions": [
-        ""
-      ],
-      "id": 11
-    },
-    {
       "userName": "Spring",
       "title": "chicken soup",
       "eatWith": "",
@@ -177,36 +140,17 @@
       "id": 12
     },
     {
-      "userName": "Winter",
-      "title": "curry",
-      "eatWith": "rice",
-      "protein": "chicken",
-      "prepTime": "10",
-      "cookTime": "20",
-      "servings": "5",
-      "ingredients": [
-        "1 chicken breast",
-        "cabbage",
-        "sugar"
-      ],
-      "instructions": [
-        "cut beef and broccoli",
-        "cut all vegetables "
-      ],
-      "id": 13
-    },
-    {
       "title": "curry",
       "ingredients": [
         {
           "amount": "1",
           "unit": "cup",
-          "item": ""
+          "item": "water"
         },
         {
           "amount": "5",
           "unit": "tbs",
-          "item": ""
+          "item": "garlic powder"
         }
       ],
       "id": 14
@@ -226,37 +170,6 @@
         }
       ],
       "id": 15
-    },
-    {
-      "userName": "Winter",
-      "title": "pho",
-      "eatWith": "other",
-      "prepTime": "10",
-      "cookTime": "15",
-      "servings": "5",
-      "ingredients": [
-        {
-          "amount": "1",
-          "unit": "piece",
-          "item": "chicken"
-        },
-        {
-          "amount": "5",
-          "unit": "cup",
-          "item": "water"
-        },
-        {
-          "amount": "",
-          "unit": "",
-          "item": ""
-        }
-      ],
-      "instructions": [
-        "cut vegies",
-        "cut lettuce",
-        "wrap it "
-      ],
-      "id": 16
     },
     {
       "userName": "Winter",
