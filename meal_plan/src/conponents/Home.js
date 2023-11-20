@@ -32,10 +32,11 @@ function Home () {
                     </Button>
                 </div>
             </nav>
-            {isFormVisible && <RecipeForm setFormVisible={setFormVisible}/>}
-            {/* {isFormVisible && <TestForm setFormVisible={setFormVisible}/>} */}
-
-            <RecipeList searchTerm={searchTerm} />
+            {isFormVisible ? [
+                <RecipeForm setFormVisible={setFormVisible}/>
+            ] : [
+                <RecipeList searchTerm={searchTerm} />
+            ]}
         </div>
     )
 }
