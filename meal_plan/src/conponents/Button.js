@@ -13,6 +13,7 @@ function Button({
     ...rest 
 }) {
     const classes = className(
+        rest.className,
         'px-3 py-1.5 border', {
             'border-blue bg-smorkyGreen text-black' : primary,
             'border-green bg-mossGreen text-black' : secondary,
@@ -31,7 +32,7 @@ function Button({
 
     return (
         <div>
-            <button className={classes}>
+            <button {...rest} className={classes}>
                 {children}
             </button>
         </div>
