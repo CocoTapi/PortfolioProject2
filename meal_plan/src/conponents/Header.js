@@ -13,7 +13,7 @@ function Header ({onChange, value }) {
                 </h1>             
             </div>    
             <div>
-                <RecipeSearch 
+                <RecipeSearch
                     onChange={onChange} 
                     value={value}
                 />
