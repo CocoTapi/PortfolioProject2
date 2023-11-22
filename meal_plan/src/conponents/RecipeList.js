@@ -1,6 +1,5 @@
 import { useFetchRecipeQuery } from "../store";
 import RecipeListItem from "./RecipeListItem";
-import Button from "./Button";
 //import {useState} from 'react';
 
 function RecipeList ({ searchTerm }) {
@@ -23,7 +22,7 @@ function RecipeList ({ searchTerm }) {
       }
 
     return (
-        <div className="bg-wheat">
+        <div className="max-w-[1640px] mx-auto p-4 py-12 grid md:grid-cols-3 sm:grid-cols-2 gap-6 bg-wheat">
             {content}
         </div>
     )
