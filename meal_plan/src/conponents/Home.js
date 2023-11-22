@@ -3,6 +3,7 @@ import RecipeList from "./RecipeList";
 import { useState } from "react";
 import Header from "./Header";
 import Button from "./Button";
+import Navbar from "./Navbar";
 
 function Home () {
     const [isFormVisible, setFormVisible] = useState(false);
@@ -23,17 +24,11 @@ function Home () {
                 onChange={handleSearchTermChange} 
                 value={searchTerm}
             />
+            <Navbar 
+                onClick={handleClick}
+            />
 
             <body>
-                <nav>
-                    {/* TODO: add the location where you are */}
-                    {/* <div>Path is here</div> */}
-                </nav>
-                <div>
-                    <Button success onClick={handleClick} className="m-2">
-                        Add Recipe
-                    </Button>
-                </div>
                 {isFormVisible ? [
                     <RecipeForm setFormVisible={setFormVisible}/>
                 ] : [

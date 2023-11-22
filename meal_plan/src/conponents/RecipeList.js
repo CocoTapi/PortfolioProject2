@@ -24,14 +24,6 @@ function RecipeList ({ searchTerm }) {
 
     return (
         <div className="bg-wheat">
-            <div>
-                {/*TODO: ADD FUNCTION LATER */}
-                <Button primary className='mb-1'>Chicken</Button>
-                <Button primary className='mb-1'>Pork</Button>
-                <Button primary className='mb-1'>Beef</Button>
-                <Button primary className='mb-1'>Seafood</Button>
-                <Button primary className='mb-1'>Other</Button>
-            </div>
             {content}
         </div>
     )

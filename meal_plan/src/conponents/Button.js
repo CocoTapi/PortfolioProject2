@@ -21,7 +21,7 @@ function Button({
             'border-woodOrange bg-woodOrange text-white' : warning,
             'border-woodPink bg-woodPink text-white' : danger,
             'rounded-full': rounded,
-            'bg-white': outline,
+            'bg-wheat': outline,
             'text-smorkyGreen': outline && primary,
             'text-mossGreen': outline && secondary,
             'text-melon': outline && success,
