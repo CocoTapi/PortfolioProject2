@@ -1,7 +1,7 @@
 import RecipeForm from "./form/RecipeForm";
 import RecipeList from "./RecipeList";
-import RecipeSearch from "./RecipeSearch";
 import { useState } from "react";
+import Header from "./Header";
 import Button from "./Button";
 
 function Home () {
@@ -19,24 +19,27 @@ function Home () {
 
     return (
         <div className="bg-wheat">
-            <nav>
-                <h1>
-                    Healthy Diet Meal Planning
-                </h1>
+            <Header 
+                onChange={handleSearchTermChange} 
+                value={searchTerm}
+            />
+
+            <body>
+                <nav>
+                    {/* TODO: add the location where you are */}
+                    {/* <div>Path is here</div> */}
+                </nav>
                 <div>
-                    <RecipeSearch 
-                        onChange={handleSearchTermChange} 
-                        value={searchTerm}/>
                     <Button success onClick={handleClick} className="m-2">
                         Add Recipe
                     </Button>
                 </div>
-            </nav>
-            {isFormVisible ? [
-                <RecipeForm setFormVisible={setFormVisible}/>
-            ] : [
-                <RecipeList searchTerm={searchTerm} />
-            ]}
+                {isFormVisible ? [
+                    <RecipeForm setFormVisible={setFormVisible}/>
+                ] : [
+                    <RecipeList searchTerm={searchTerm} />
+                ]}
+            </body>
         </div>
     )
 }

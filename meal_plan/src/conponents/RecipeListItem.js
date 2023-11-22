@@ -14,12 +14,12 @@ function RecipeListItem ({ recipe }) {
 
     return (
         <div>
-            <div>
-                {/* <div class="card-image">
+            <div onClick={handleClick}>
+                <div class="card-image">
                     <figure class="image is-4by3">
                     <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/707175.jpeg" alt="Placeholder image"/>
                     </figure>
-                </div> */}
+                </div>
                 <div onClick={handleClick}>
                     <div>
                         <div>
