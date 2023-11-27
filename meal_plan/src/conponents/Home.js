@@ -2,7 +2,6 @@ import RecipeForm from "./form/RecipeForm";
 import RecipeList from "./RecipeList";
 import { useState } from "react";
 import Header from "./Header";
-import Button from "./Button";
 import Navbar from "./Navbar";
 
 function Home () {
