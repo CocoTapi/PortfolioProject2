@@ -1,10 +1,11 @@
-import Home from './conponents/Home';
+//import Home from './conponents/Home';
+import Link from "./conponents/Link";
 
 function App() {
 
   return (
     <div>
-      <Home />
+      <Link></Link>
     </div>
   );
 }
