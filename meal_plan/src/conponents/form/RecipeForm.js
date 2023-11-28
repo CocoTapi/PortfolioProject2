@@ -2,7 +2,6 @@ import { useAddRecipeMutation } from '../../store';
 import { useState } from 'react';
 import IngredientForm from './IngredientForm';
 import { RiDeleteBinFill } from "react-icons/ri";
-import { AiFillCloseCircle } from "react-icons/ai";
 import Button from '../Button';
 
 function RecipeForm ({ setFormVisible }) {
