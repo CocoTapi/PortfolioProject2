@@ -1,10 +1,11 @@
-import Home from './conponents/Home';
+//import Home from './conponents/Home';
+import TestForm from "./conponents/form/TestForm";
 
 function App() {
 
   return (
     <div>
-      <Home />
+      <TestForm/>
     </div>
   );
 }

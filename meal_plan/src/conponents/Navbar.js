@@ -1,5 +1,8 @@
 import Button from "./Button";
 import { IoMdArrowDropdown } from "react-icons/io";
+import Route from "./Route";
+import RecipeList from "./RecipeList";
+import Link from "./Link";
 
 function Navbar ({ onClick }) {
     const barOptions = ['chicken', 'Pork', 'Beef', 'Seafood', 'Other'];
@@ -18,6 +21,7 @@ function Navbar ({ onClick }) {
             <div className="flex">
                 {renderedOptions}
             </div>
+
             
             <Button success onClick={onClick} >
                 Add Recipe

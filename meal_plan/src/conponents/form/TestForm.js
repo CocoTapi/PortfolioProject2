@@ -1,7 +1,10 @@
 import { useAddRecipeMutation } from '../../store';
 import { useState } from 'react';
+import ImageUploading from 'react-images-uploading';
 
 function TestForm({ setFormVisible }) {
+    const [image, setImage] = useState([]);
+    const maxNumber = 1;
     const [formData, setFormData] = useState(
         {
             title: "",
@@ -15,6 +18,14 @@ function TestForm({ setFormVisible }) {
         const { name, value } = event.target;
         setFormData((prevFormData) => ({ ...prevFormData, [name]: value }))
     };
+
+    //for image
+    const handleImageChange = (imageList, addUpdateIndex) => {
+        //console.log(imageList, addUpdateIndex);
+        setImage(imageList);
+    }
+    console.log(image);
+
 
     //for ingredients FIX LATER
     const handleAmountChange = (event, index, property) => {
@@ -76,6 +87,48 @@ function TestForm({ setFormVisible }) {
                         />
                     </div>
                 </div>
+                {/* upload photo */}
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label" htmlFor='photo'>Add Image</label>
+                        <ImageUploading 
+                            multiple
+                            value={image}
+                            onChange={handleImageChange}
+                            maxNumber={maxNumber}
+                            dataURLKey='data_url'
+                        >
+                            {({
+                                imageList,
+                                onImageUpload,
+                                onImageRemoveAll,
+                                isDragging,
+                                dragProps
+                            }) => (
+                                <div>
+                                    <button
+                                        style={isDragging ? { color: 'red' } : undefined}
+                                        onClick={onImageUpload}
+                                        {...dragProps}
+                                    >
+                                        Click or Drop here
+                                    </button>
+                                    &nbsp;
+                                    <button 
+                                        onClick={onImageRemoveAll}
+                                    >
+                                        Remove Image
+                                    </button>
+                                    {imageList.map((image, index) => (
+                                        <div key={index}>
+                                            <img src={image['data_url']} alt="" width="100" />
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </ImageUploading>
+                    </div>
+                </div>
                 {/* recipe ingredients */}
                 <div className='label'>Protein</div>
                 {formData.ingredients.map((ingredient, index) => (
@@ -130,6 +183,7 @@ function TestForm({ setFormVisible }) {
                     <button className="button is-link">Submit</button>
                 </div>
             </form>
+            {/* <img src={image[0].data_url} alt='katsu'/> */}
         </div>
     )
 }
