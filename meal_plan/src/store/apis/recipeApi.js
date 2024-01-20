@@ -22,10 +22,12 @@ const recipeApi = createApi({
 			fetchRecipe: builder.query({
 				providesTags: (result, error, recipe) => {
 					//console.log(result)
-					const tags = result.map((recipe) => {
-						return { type: 'Recipe', id: recipe.id };
-					});
-					return tags;
+					if (result) {
+						const tags = result.map((recipe) => {
+							return { type: 'Recipe', id: recipe.id };
+						});
+						return tags;
+					}
 				},
 				query: () => {
 					return {

@@ -4,4 +4,4 @@ function RecipesPage() {
     return <RecipeList />
 }
 
-export default RecipesPage;
+export default RecipesPage
