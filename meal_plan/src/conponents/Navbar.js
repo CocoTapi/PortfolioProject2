@@ -20,8 +20,10 @@ function Navbar () {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink>
-
+                    <NavLink
+                        to='new'
+                    >
+                        Add Recipe
                     </NavLink>
                 </li>
             </ul>

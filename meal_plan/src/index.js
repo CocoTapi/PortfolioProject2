@@ -6,16 +6,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import { NavigationProvider } from './context/navigation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavigationProvider>
       <Provider store={store}>
         <App />
       </Provider>
-    </NavigationProvider>
   </React.StrictMode>
 );
 
