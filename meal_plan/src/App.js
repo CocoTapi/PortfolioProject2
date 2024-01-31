@@ -1,10 +1,11 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import RootLayout from './conponents/pages/Root';
 import Home from './conponents/Home';
-//import RecipesPage from './conponents/pages/RecipesPage';
 import RecipeList from './conponents/RecipeList';
 import NewRecipePage from './conponents/pages/NewRecipePage';
 import RecipeRootPage from './conponents/pages/RecipeRootPage';
+import RecipeDetail from './conponents/RecipeDetail';
+import EditRecipe from './conponents/form/EditRecipe';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,17 @@ const router = createBrowserRouter([
           { 
             index: true,
             element: <RecipeList />
+          },
+          {
+            path: ':eventId',
+            id: 'event-detail',
+            children: [
+              {
+                index: true,
+                element: <RecipeDetail />
+              },
+              { path: 'edit', element: <EditRecipe />}
+            ]
           },
           {
             path: 'new',
