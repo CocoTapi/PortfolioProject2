@@ -109,7 +109,7 @@ const recipeApi = createApi({
 
 export const { 
 	useFetchRecipeQuery,
-	//useFetchRecipeByIdQuery, 
+	useFetchRecipeByIdQuery, 
 	useAddRecipeMutation, 
 	useRemoveRecipeMutation, 
 	useEditRecipeMutation
