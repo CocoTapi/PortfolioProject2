@@ -36,14 +36,17 @@ const recipeApi = createApi({
 					};
 				},
 			}),
-			// fetchRecipeById: builder.query({
-			// 	query: (recipe) => {
-			// 		return {
-			// 			url: `/recipes/${recipe.id}`,
-			// 			method: 'GET',
-			// 		};
-			// 	},
-			// }),
+			fetchRecipeById: builder.query({
+				invalidatesTags: (result, error, recipe) => {
+					return [{ type: 'Recipe', id: recipe.id }];
+				},
+				query: (recipe) => {
+					return {
+						url: `/recipes/${recipe.id}`,
+						method: 'GET',
+					};
+				},
+			}),
 			addRecipe: builder.mutation({
 				invalidatesTags: (result, error, recipe) => {
 					return [{ type: 'Recipe' }];
